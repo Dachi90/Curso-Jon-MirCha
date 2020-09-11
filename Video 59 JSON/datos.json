@@ -1,5 +1,3 @@
-/* En un archivo JSON aún que es muy parecido a un objeto de Javascript aquí las propiedades tiene que ir entre comillas dobles */
-
 {
   "cadena": "Jon",
   "numero": 35,
