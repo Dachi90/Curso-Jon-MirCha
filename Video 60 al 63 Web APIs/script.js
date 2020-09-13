@@ -33,7 +33,7 @@ console.log(document.scripts); // En nuestro ejemplo nos muestra dos porque tene
 
 //          *********************************************** Video 62 DOM:Nodos, elementos y selectores ***********************************************
 
-console.log(document.getElementsByTagName("li")); // Este método ha sido remplazado por .querySelector("")
+/* console.log(document.getElementsByTagName("li")); // Este método ha sido remplazado por .querySelector("")
 console.log(document.getElementsByClassName("card")); // Este método ha sido remplazado por .querySelector("")
 console.log(document.getElementsByTagName("nombre")); // Este método ha sido remplazado por .querySelector("")
 console.log(document.getElementById("menu"));
@@ -47,4 +47,30 @@ console.log(document.querySelector(".card")); // Nos devolverá solo el primer s
 // El método querySelectorAll te devuelve todos los selectores del tipo que hayas especificado del documento html.
 console.log(document.querySelectorAll(".card")); // Nos devolverá todos los selectores que tengan la clase .card
 console.log(document.querySelectorAll(".card")[2]); // También le podemos indicar la posición que queremos que nos devuelva.
-console.log(document.querySelectorAll("#menu li")); // O indicarle que solo queremos los selectores que esten dentro de otros.
+console.log(document.querySelectorAll("#menu li")); // O indicarle que solo queremos los selectores que esten dentro de otros. */
+
+//          *********************************************** Video 63 DOM:Atributos y Data-Attributes ***********************************************
+
+// Accediendo al atributo land del elemento html
+console.log(document.documentElement.lang);
+console.log(document.documentElement.getAttribute("lang"));
+
+// Según que atributo estemos llamando peude dar valores diferente si lo hacemos con el . o con el método getAttribute("")
+console.log(document.querySelector(".link-index").href);
+console.log(document.querySelector(".link-index").getAttribute("href"));
+
+// Es una buena practica que las variables en las que vas a almecenar elementos del DOM declararlas con el símbolo dle dolar delante.
+const $linkIndex = document.querySelector(".link-index");
+// El método .setAttribute() recibe dos parametros, primero el atributo que queremos modificar o añadir y el segundo el valor que le daremos a ese atributo.
+$linkIndex.setAttribute("target", "_blank");
+
+// Con el método .hasAttribute("") podemos verificar si un elemento tiene dicho atributo.
+console.log($linkIndex.hasAttribute("target"));
+
+//Con el método .removeAttribute("") podemos eliminar un atributo de un elemento.
+$linkIndex.removeAttribute("target");
+console.log($linkIndex.hasAttribute("target")); // Aquí compruebo que efectivamente se ha eliminado el atributo target.
+
+//--------- Data-Attributes
+console.log($linkIndex.getAttribute("data-description"));
+console.log($linkIndex.dataset);
