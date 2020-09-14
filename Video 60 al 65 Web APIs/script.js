@@ -79,7 +79,7 @@ console.log($linkIndex.dataset);
 
 //          *********************************************** Video 64 DOM:Estilos y variables CSS ***********************************************
 
-const $linkIndex = document.querySelector(".link-index");
+/* const $linkIndex = document.querySelector(".link-index");
 
 // Formas de acceder a propiedades CSS
 console.log($linkIndex.style);
@@ -125,4 +125,31 @@ $body.style.color = varYellowColor;
 // Modificamos las variables CSS / Custom Properties CSS
 $html.style.setProperty("--dark-color", "#000");
 varDarkColor = getComputedStyle($html).getPropertyValue("--dark-color");
-$body.style.setProperty("background-color", varDarkColor);
+$body.style.setProperty("background-color", varDarkColor); */
+
+//          *********************************************** Video 65 DOM:Clases CSS ***********************************************
+
+const $card = document.querySelector(".card");
+
+//La propiedad className obtiene y establece el valor del atributo class del elemento especificado.
+console.log($card.className);
+
+// La propiedad de sólo lectura Element.classList devuelve una colección activa de DOMTokenList de los atributos de clase del elemento.
+console.log($card.classList);
+// El método .contains() de classList comprueba si la clase indicada existe en el atributo de clase del elemento. Y nos devolverá un boolean.
+console.log($card.classList.contains("rotate-45"));
+// El método .add() añade las clases indicadas. Si estas clases existieran en el atributo del elemento serán ignoradas.
+$card.classList.add("rotate-45");
+console.log($card.classList.contains("rotate-45")); // Comprobamos que ahora nos devuelve un true depués de añadirle dicha clase.
+console.log($card.className); // Comprobamos que ahora nos devuelve las dos clases después de añadirle al segunda.
+console.log($card.classList); // Comprobamos que ahora el DOMTokenList tiene 2 elementos, uno por cada clase.
+// El método .remove() elimina las clases indicadas.
+$card.classList.remove("rotate-45");
+// El método .toggle() alterna el valor de la clase; ej., si la clase existe la elimina y devuelve false, si no, la añade y devuelve true.
+$card.classList.toggle("rotate-45"); // La añade porque el elemento $card no tiene la propiedad rotate-45
+console.log($card.classList.contains("rotate-45")); // Nos devuelve un true porque ahora si tiene la calse rotate-45.
+$card.classList.toggle("rotate-45"); // Se elimina la propiedad rotate-45 porque el elemento $card ya tiene esta propiedad.
+console.log($card.classList.contains("rotate-45")); // Nos devuelve un false ya que hemos eliminado la propiedad rotate-45.
+// El método .replace("","") recibe dos parametos el primero es la clase la cúal queremos remplazar y el segundo es la clase que queremos que utilizaremos.
+$card.classList.toggle("rotate-45"); // Le vuelvo a añadir la clase rotate-45 para poder remplazarla por otra.
+$card.classList.replace("rotate-45", "rotate-135"); // Remplazamos la calse rotate-45 por la clase rotate-135.
