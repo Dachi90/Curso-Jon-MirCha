@@ -129,7 +129,7 @@ $body.style.setProperty("background-color", varDarkColor); */
 
 //          *********************************************** Video 65 DOM:Clases CSS ***********************************************
 
-const $card = document.querySelector(".card");
+/* const $card = document.querySelector(".card");
 
 //La propiedad className obtiene y establece el valor del atributo class del elemento especificado.
 console.log($card.className);
@@ -152,4 +152,29 @@ $card.classList.toggle("rotate-45"); // Se elimina la propiedad rotate-45 porque
 console.log($card.classList.contains("rotate-45")); // Nos devuelve un false ya que hemos eliminado la propiedad rotate-45.
 // El método .replace("","") recibe dos parametos el primero es la clase la cúal queremos remplazar y el segundo es la clase que queremos que utilizaremos.
 $card.classList.toggle("rotate-45"); // Le vuelvo a añadir la clase rotate-45 para poder remplazarla por otra.
-$card.classList.replace("rotate-45", "rotate-135"); // Remplazamos la calse rotate-45 por la clase rotate-135.
+$card.classList.replace("rotate-45", "rotate-135"); // Remplazamos la calse rotate-45 por la clase rotate-135. */
+
+//          *********************************************** Video 66 DOM:Texto y HTML ***********************************************
+
+//Guardamos en una variable el parrafo con el id #que-es.
+const $whatIsDom = document.getElementById("que-es");
+
+// Texto que añadiremos al HTML através de javascript
+let text = `
+<p>
+El Modelo del Obejeto (<b><i>DOM - Document Object Model</i></b>) es un API para documentos HTML y XML
+</p>
+<p>
+Este proveé una representación estructural del documento, permitiendo modificar su contenido y presentación visual mediante código JS
+</p>
+<p>
+<mark> El DOM no es parte de la especificación JavaScript, es una API para los navegadores. </mark>
+</p>
+`;
+
+// La propiedad .innerContent inserta el contenido como texto, sin representar el código html escrito en el.
+$whatIsDom.innerContent = text;
+// La propiedad .innerHTML inserta dentro del elemento DOM que le indiquemos el contenido y respeta el código HTML que hemos añadido.
+$whatIsDom.innerHTML = text;
+//La propiedad .outerHTML remplaza el elemento del DOM que le indicamos por el contenido que le estemos pasando.
+$whatIsDom.outerHTML = text;
