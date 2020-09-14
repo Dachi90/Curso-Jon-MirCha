@@ -51,7 +51,7 @@ console.log(document.querySelectorAll("#menu li")); // O indicarle que solo quer
 
 //          *********************************************** Video 63 DOM:Atributos y Data-Attributes ***********************************************
 
-// Accediendo al atributo land del elemento html
+/* // Accediendo al atributo land del elemento html
 console.log(document.documentElement.lang);
 console.log(document.documentElement.getAttribute("lang"));
 
@@ -61,6 +61,7 @@ console.log(document.querySelector(".link-index").getAttribute("href"));
 
 // Es una buena practica que las variables en las que vas a almecenar elementos del DOM declararlas con el símbolo dle dolar delante.
 const $linkIndex = document.querySelector(".link-index");
+
 // El método .setAttribute() recibe dos parametros, primero el atributo que queremos modificar o añadir y el segundo el valor que le daremos a ese atributo.
 $linkIndex.setAttribute("target", "_blank");
 
@@ -74,3 +75,54 @@ console.log($linkIndex.hasAttribute("target")); // Aquí compruebo que efectivam
 //--------- Data-Attributes
 console.log($linkIndex.getAttribute("data-description"));
 console.log($linkIndex.dataset);
+ */
+
+//          *********************************************** Video 64 DOM:Estilos y variables CSS ***********************************************
+
+const $linkIndex = document.querySelector(".link-index");
+
+// Formas de acceder a propiedades CSS
+console.log($linkIndex.style);
+console.log($linkIndex.getAttribute("style"));
+
+console.log($linkIndex.style.backgroundColor);
+console.log($linkIndex.style.color);
+console.log(window.getComputedStyle($linkIndex));
+console.log(window.getComputedStyle($linkIndex).getPropertyValue("color"));
+
+// Formas de modificar propiedades CSS
+
+$linkIndex.style.setProperty("text-decoration", "none");
+$linkIndex.style.setProperty("display", "block");
+
+$linkIndex.style.width = "50%";
+$linkIndex.style.textAlign = "center";
+$linkIndex.style.marginLeft = "auto";
+$linkIndex.style.marginRight = "auto";
+$linkIndex.style.padding = "1rem";
+$linkIndex.style.borderRadius = "0.5rem";
+
+// Ahora aquí podemos ver que si accedemos a los estilos de este elemento de cualqiera de las 3 maneras anteriores nos devuelve todos los que le hemos añadido.
+console.log($linkIndex.style);
+console.log($linkIndex.getAttribute("style"));
+console.log(window.getComputedStyle($linkIndex));
+
+// **************** Variables CSS / Custom Properties CSS *************
+
+//Nos guardamos unas variables para acceder mas comodamente a los elementos html y body
+const $html = document.documentElement,
+  $body = document.body;
+
+// Accedemos a las variables CSS / Custom Properties CSS y las guardamos en una variable para luego mostrarlas por consola
+let varDarkColor = getComputedStyle($html).getPropertyValue("--dark-color"),
+  varYellowColor = getComputedStyle($html).getPropertyValue("--yellow-color");
+console.log(varDarkColor, varYellowColor);
+
+// Le asiganmos las variables CSS / Custom Properties CSS a los elementos body y html que teniamos guardados en unas variables.
+$body.style.backgroundColor = varDarkColor;
+$body.style.color = varYellowColor;
+
+// Modificamos las variables CSS / Custom Properties CSS
+$html.style.setProperty("--dark-color", "#000");
+varDarkColor = getComputedStyle($html).getPropertyValue("--dark-color");
+$body.style.setProperty("background-color", varDarkColor);
