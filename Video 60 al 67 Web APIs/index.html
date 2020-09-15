@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Video 60 WEB APIs</title>
+   <style>
+      /* Para que una variable CSSeste disponible en todos los selectores de su documento hayq ue definirlas en :root . :root representa a la etiqueta html */
+
+      :root {
+         --yellow-color: #f7df1e;
+         --dark-color: #222;
+      }
+
+      .cards {
+         border: solid var(--dark-color);
+         padding: 1rem;
+      }
+
+      .card {
+         display: inline-block;
+         background-color: var(--dark-color);
+         color: var(--yellow-color);
+      }
+
+      .card figcaption {
+         padding: 1rem;
+      }
+
+      .rotate-45 {
+         transform: rotate(45deg);
+      }
+
+      .rotate-135 {
+         transform: rotate(135deg);
+      }
+
+      .opcity-80 {
+         opacity: 0.8;
+      }
+
+      .sepia {
+         filter: sepia(1);
+      }
+   </style>
+</head>
+
+<body>
+   <h1>WEB APIs</h1>
+   <p>
+      El Modelo de Objetos del Documento (DOM) es un API para documentos HTML y XML. Proporciona una representación
+      estructural del documento, permitiendo la modificación de su contenido o su presentación visual. Esencialmente,
+      comunica las páginas web con los scripts o los lenguajes de programación.
+   </p>
+
+   <h2>DOM: Document Object model</h2>
+   <p>
+      El Modelo de objetos CSS (CSS Object Model) es un conjunto de APIs que permite manipular CSS desde JavaScript. Así
+      como el DOM (Document Object Model) es para HTML, el CSSOM (CSS Object Model) es para CSS. Permite leer y
+      modificar
+      el estilo de CSS de forma dinámica.
+   </p>
+
+   <h2>BOM: Browser Object model</h2>
+
+   <h2>CSSOM: CSS Object model</h2>
+
+   <h2>WEB APIs</h2>
+   <ul>
+      <li>Eventos</li>
+      <li>Forms</li>
+      <li>AJAX- Fetc</li>
+      <li>History</li>
+      <li>Web Storage</li>
+      <li>Geolocation</li>
+      <li>Drag & Drop</li>
+      <li>Indexed DB</li>
+      <li>Canvas</li>
+      <li>MatchMedia</li>
+      <li>etc...</li>
+   </ul>
+
+   <br />
+   <hr />
+   <br />
+
+   <h3>Manejo del DOM</h3>
+   <p id="que-es">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus dolore necessitatibus consequatur
+      corporis, rem voluptas suscipit, praesentium eligendi asperiores maxime dolores distinctio possimus optio
+      excepturi
+      quasi quidem quibusdam quae soluta.
+   </p>
+
+   <nav id="menu">
+      <ul>
+         <li><a href="">Sección 1</a></li>
+         <li><a href="">Sección 2</a></li>
+         <li><a href="">Sección 3</a></li>
+         <li><a href="">Sección 4</a></li>
+         <li><a href="">Sección 5</a></li>
+      </ul>
+   </nav>
+   <input type="text" name="nombre" placeholder="Nombre" />
+   <a class="link-index" href="index.html" style="background-color: #f7df1e; color: #222" data-id="1"
+      data-description="documento index">index</a>
+   <section class="cards">
+      <figure class="card">
+         <img src="https://placeimg.com/200/200/tech" alt="Tech" />
+         <figcaption>Tech</figcaption>
+      </figure>
+      <figure class="card">
+         <img src="https://placeimg.com/200/200/animals" alt="Animals" />
+         <figcaption>Animals</figcaption>
+      </figure>
+      <figure class="card">
+         <img src="https://placeimg.com/200/200/people" alt="People" />
+         <figcaption>People</figcaption>
+      </figure>
+      <figure class="card">
+         <img src="https://placeimg.com/200/200/arch" alt="Arch" />
+         <figcaption>Arch</figcaption>
+      </figure>
+      <figure class="card">
+         <img src="https://placeimg.com/200/200/nature" alt="Nature" />
+         <figcaption>Nature</figcaption>
+      </figure>
+   </section>
+   <script src="script.js"></script>
+</body>
+
+</html>

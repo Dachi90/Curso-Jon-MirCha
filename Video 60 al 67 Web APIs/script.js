@@ -156,7 +156,7 @@ $card.classList.replace("rotate-45", "rotate-135"); // Remplazamos la calse rota
 
 //          *********************************************** Video 66 DOM:Texto y HTML ***********************************************
 
-//Guardamos en una variable el parrafo con el id #que-es.
+/* //Guardamos en una variable el parrafo con el id #que-es.
 const $whatIsDom = document.getElementById("que-es");
 
 // Texto que añadiremos al HTML através de javascript
@@ -177,4 +177,30 @@ $whatIsDom.innerContent = text;
 // La propiedad .innerHTML inserta dentro del elemento DOM que le indiquemos el contenido y respeta el código HTML que hemos añadido.
 $whatIsDom.innerHTML = text;
 //La propiedad .outerHTML remplaza el elemento del DOM que le indicamos por el contenido que le estemos pasando.
-$whatIsDom.outerHTML = text;
+$whatIsDom.outerHTML = text; */
+
+//    *********************************************** Video 67 DOM: Traversing (Recorriendo el DOM)  ***********************************************
+
+const $cards = document.querySelector(".cards");
+console.log($cards);
+
+//Para acceder a los hijos de un elemento utilizamos la propiedad .children
+console.log($cards.children);
+
+//También podmeos especificar a que hijo queremos acceder.
+console.log($cards.children[2]);
+
+//Tambien podemos elegir acceder al último o primer hijo de un elemento con las propiedades firstElementChild o lastElementChild.
+console.log($cards.firstElementChild);
+console.log($cards.lastElementChild);
+
+//Para acceder al padre de un elemento utilizmos la propiedad .parentElement.
+console.log($cards.parentElement);
+
+//Para acceder al elemento hermano anterior usamos la propiedad .previousElementSibiling y al hermano posterior .nextElementSibiling.
+console.log($cards.previousElementSibling);
+console.log($cards.nextElementSibling);
+
+//El método closest() de la interfaz Element devuelve el ascendiente más cercano al elemento actual (o el propio elemento actual) que coincida con el selector proporcionado por parámetro. Si no existe dicho ascendiente, devuelve null.
+console.log($cards.closest("section")); // En este caso devuelve el mismo elemento ya que no hay un elemento section que este por encima de este.
+console.log($cards.children[3].closest("section")); // Ahora le estamos diciendo que nos devuelva el elemento section padre más cercano del hijo en la posición 3 de $cards. Es decir el section padre más cercano a la cuarta imagen por eso nos devuelve el section que envuelve todas las imagenes.
