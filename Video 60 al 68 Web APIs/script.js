@@ -181,7 +181,7 @@ $whatIsDom.outerHTML = text; */
 
 //    *********************************************** Video 67 DOM: Traversing (Recorriendo el DOM)  ***********************************************
 
-const $cards = document.querySelector(".cards");
+/* const $cards = document.querySelector(".cards");
 console.log($cards);
 
 //Para acceder a los hijos de un elemento utilizamos la propiedad .children
@@ -203,4 +203,101 @@ console.log($cards.nextElementSibling);
 
 //El método closest() de la interfaz Element devuelve el ascendiente más cercano al elemento actual (o el propio elemento actual) que coincida con el selector proporcionado por parámetro. Si no existe dicho ascendiente, devuelve null.
 console.log($cards.closest("section")); // En este caso devuelve el mismo elemento ya que no hay un elemento section que este por encima de este.
-console.log($cards.children[3].closest("section")); // Ahora le estamos diciendo que nos devuelva el elemento section padre más cercano del hijo en la posición 3 de $cards. Es decir el section padre más cercano a la cuarta imagen por eso nos devuelve el section que envuelve todas las imagenes.
+console.log($cards.children[3].closest("section")); // Ahora le estamos diciendo que nos devuelva el elemento section padre más cercano del hijo en la posición 3 de $cards. Es decir el section padre más cercano a la cuarta imagen por eso nos devuelve el section que envuelve todas las imagenes. */
+
+//    *********************************************** Video 68 DOM: Creando Elementos yFragmentos  ***********************************************
+
+// Vamos a añadir una imagen más en la section con la clase .cards
+
+//En un documento HTML, el método Document.createElement() crea un elemento HTML especificado por su tagName
+// Aquí nos creamos cada elemento que necesitamos (figure,img,figcaption y el texto del figcaption) y lo guardamos en varaibles, por otro lado tambien guardamos en una variable el elemento con la clase .cards que es donde añadiremos el nuevo elemento
+const $figure = document.createElement("figure"),
+  $img = document.createElement("img"),
+  $figcaption = document.createElement("figcaption"),
+  $figcaptionText = document.createTextNode("Animals"),
+  $cards = document.querySelector(".cards");
+
+// el método .appendChild() agrega el hijo que le indicamos como parámetro al elmento donde aplicamos el método.
+// Ahora tenemos todos los elementos por separado, primero necesitariamos unirlos para luego añadirlos al elemento con la clase .cards. Entonces necesitamos que el elemento figure que creamos tenga dentro al elemento img y figcaption que tambien creamos, Y que figcaption tenga dentro el texto que también creamos y la imagen los atributos src y alt. Y por último añadirle la calse .card para que esté igual que las demás.
+
+$img.setAttribute("src", "https://placeimg.com/200/200/animals"); // Añadimos atributo src al elemento img
+$img.setAttribute("alt", "Animals"); // Añadimos atributo alt al elemento img
+$figure.appendChild($img); // Añadimos el elemento guardado en la variable $img al elemnto guardado en la variable $figure
+
+$figcaption.appendChild($figcaptionText); // Añadimos el elmento guardadoe n la variable $figcaptionText al elemento guardado en la variable $figcaption
+$figure.appendChild($figcaption); // Añadimos el elemento guardado en la variable $figcaption al elemnto guardado en la variable $figure
+
+$figure.classList.add("card"); // Añadimos la clase .card al elemento guardado en la variable $figure.
+$cards.appendChild($figure); // Añadimos el elemento guardado en la variable $figuro al elemento guardado en la clase $cards.
+
+// -----------------------------
+
+// De esta forma al añadirle el contenido con la propiedad inner HTML como texto JavaScript no lo considera como un nodo, pero finalmente estamos generando contenido dinámicamente con JavaScript.
+
+const $figure2 = document.createElement("figure"); // Creamos un elemento figure y lo guardamos en la variable $figure2
+
+$figure2.innerHTML = `
+   <img src="https://placeimg.com/200/200/people" alt="People" />
+   <figcaption>People</figcaption>
+`; // Al elemento guardado en $figure2 le añadimos el código html indicado.
+
+$figure2.classList.add("card"); // Le añadimos la clase .cards para que sea igual a las demás.
+$cards.appendChild($figure2);
+
+// --------------------------
+
+// Ahora añadiremos más de un elemento dinámicamente, en este caso desde los datos que tenemos en un array pero esto sería más útil cuando recibamos datos de un archivo JSON de una API o algún tipo de dato externo que recibamos y apartir del cual queramos crear contenido en nuestra web.
+
+document.write("<h3>Listas creadas dinámicamente</h3>"); // Esto simplemente es poner un separador entre las figuras y esta lista, document.write no es una buena practica para añadir contenido.
+
+const estaciones = ["primavera", "Verano", "Otoño", "Invierno"]; // Datos apartir del los cuales queremos generar contenido dinámicamente.
+
+const $ul = document.createElement("ul"); // Creamos un elemento ul y lo guardamos en la variable $ul.
+document.body.appendChild($ul); // En este caso añadimos el elemento guardado en la variable $ul como hijo del body.
+
+estaciones.forEach((el) => {
+  const $li = document.createElement("li"); // Por cada elemento del array estaciones crea un elemento li que se guardara en la variable $li
+  $li.textContent = el; // elemento guardado en la variable $li le añadimos el texto del parametro el (es decir el elmento del array que este en ese momento).
+  $ul.appendChild($li); // Al elmento guardado en la variable $ul le añadimos un hijo con el elemento guardado en la variable $li
+});
+
+// ----------------------
+// Ahora añadiremos más de un elemento dinámicamente peor utilizando la técnica de innerHTML
+
+const continentes = ["África", "América", "Asia", "Europa", "Oceania"]; // Datos apartir del los cuales queremos generar contenido dinámicamente.
+const $ul2 = document.createElement("ul"); // Creamos un elemento ul y lo guardamos en la variable $ul2.
+document.body.appendChild($ul2); // En este caso añadimos el elemento guardado en la variable $ul2 como hijo del body.
+
+continentes.forEach((el) => ($ul2.innerHTML += `<li>${el}</li>`)); // A cada elemento de continentes le añades a $ul2 el código html <li>${el}</li>.
+
+// ----------------------
+// Cada inseción de elmentos al DOM es un operación costosa que puede afectar al rendimiento de tu web o app, en los casos anteriores al ser solo 4 y 5 elementos no pasa nada, pero imaginate por ejemplo la web de un comercio donde podriás lelgar a cargar cientos o miles de productos esto sería perjucial para el rendimiento.
+// Para eso tenemos los fragmentos del dom al cúal le podemos ir añadiendo elementos y una vez que este fragmento tenga todos los elementos cargados se hará la inserción al DOM con todos los elemetnos cargados de ese fragmento. Con lo cuál solo hacemos una insercíon al DOM.
+// Y esta es la mejor opción para añadir elementos dinámicamente.
+
+const meses = [
+  "Enero",
+  "Febrero",
+  "Marzo",
+  "Abril",
+  "Mayo",
+  "Junio",
+  "Julio",
+  "Agosto",
+  "Septiembre",
+  "Octubre",
+  "Noviembre",
+  "Diciembre",
+];
+const $ul3 = document.createElement("ul");
+
+const $fragment = document.createDocumentFragment(); // Aquí creamos nuestro fragmento y lo guardamos en la variable $fragment
+
+meses.forEach((el) => {
+  const $li = document.createElement("li"); // Por cada elemento del array meses crea un elemento li que se guardara en la variable $li
+  $li.textContent = el; // elemento guardado en la variable $li le añadimos el texto del parametro el (es decir el elmento del array que este en ese momento).
+  $fragment.appendChild($li); // Aquí es donde en lugar ir haciendo una inserción sobre el DOM por cada elemento que tenemos se lo vamos añadiendo al fragmento que hemos creado y guardado en la variable $fragment
+});
+
+$ul3.appendChild($fragment); // Una vez con todos los elementos cargados en el fragmento los añadimos al elemento ul guardado en la vatiable $ul3
+document.body.appendChild($ul3); // Y finalmente le añadimos el elemento guardado en la variable $ul3 con todos los elementos al body.
