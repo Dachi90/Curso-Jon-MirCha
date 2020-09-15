@@ -207,7 +207,7 @@ console.log($cards.children[3].closest("section")); // Ahora le estamos diciendo
 
 //    *********************************************** Video 68 DOM: Creando Elementos yFragmentos  ***********************************************
 
-// Vamos a añadir una imagen más en la section con la clase .cards
+/* // Vamos a añadir una imagen más en la section con la clase .cards
 
 //En un documento HTML, el método Document.createElement() crea un elemento HTML especificado por su tagName
 // Aquí nos creamos cada elemento que necesitamos (figure,img,figcaption y el texto del figcaption) y lo guardamos en varaibles, por otro lado tambien guardamos en una variable el elemento con la clase .cards que es donde añadiremos el nuevo elemento
@@ -300,4 +300,43 @@ meses.forEach((el) => {
 });
 
 $ul3.appendChild($fragment); // Una vez con todos los elementos cargados en el fragmento los añadimos al elemento ul guardado en la vatiable $ul3
-document.body.appendChild($ul3); // Y finalmente le añadimos el elemento guardado en la variable $ul3 con todos los elementos al body.
+document.body.appendChild($ul3); // Y finalmente le añadimos el elemento guardado en la variable $ul3 con todos los elementos al body. */
+
+//  *********************************************** Video 68 DOM: Templates HTML  ***********************************************
+
+const $cards = document.querySelector(".cards");
+const $template = document.getElementById("template-card").content;
+const $fragment = document.createDocumentFragment();
+const cardContent = [
+  {
+    title: "Tecnologia",
+    img: "https://placeimg.com/200/200/tech",
+  },
+  {
+    title: "Animales",
+    img: "https://placeimg.com/200/200/animals",
+  },
+  {
+    title: "Arquitectura",
+    img: "https://placeimg.com/200/200/arch",
+  },
+  {
+    title: "Gente",
+    img: "https://placeimg.com/200/200/people",
+  },
+  {
+    title: "Naturaleza",
+    img: "https://placeimg.com/200/200/nature",
+  },
+];
+
+cardContent.forEach((el) => {
+  $template.querySelector("img").setAttribute("src", el.img);
+  $template.querySelector("img").setAttribute("alt", el.title);
+  $template.querySelector("figcaption").textContent = el.title;
+
+  let $clone = document.importNode($template, true);
+  $fragment.appendChild($clone);
+});
+
+$cards.appendChild($fragment);
