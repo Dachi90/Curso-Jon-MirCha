@@ -382,7 +382,7 @@ Posiciones:
    afterend (hermano siguiente)
 */
 
-const $cards = document.querySelector(".cards"),
+/* const $cards = document.querySelector(".cards"),
   $newCard = document.createElement("figure");
 
 $newCard.innerHTML = `
@@ -394,4 +394,32 @@ $newCard.classList.add("card");
 //$cards.insertAdjacentElement("beforebegin", $newCard);
 //$cards.insertAdjacentElement("afterbegin", $newCard);
 //$cards.insertAdjacentElement("beforeend", $newCard);
-$cards.insertAdjacentElement("afterend", $newCard);
+$cards.insertAdjacentElement("afterend", $newCard); */
+
+//  ********************************************* Video 72 DOM: Manejadores de Eventos  *********************************************
+
+function holaMundo() {
+  alert("Hola Mundo");
+  console.log(event);
+}
+
+// Los manejadores de eventos semánticos solo pueden recibir una función por evento. Si añades más de una se quedará con la última
+const $eventoSemantico = document.getElementById("evento-semantico");
+
+$eventoSemantico.onclick = holaMundo; // esta función no se ejecutará ya que a continuación le asignamos otra función al evento onclick.
+$eventoSemantico.onclick = function (e) {
+  alert("Hola Mundo manejador de eventos semánticos");
+  console.log(event);
+  console.log(e);
+};
+
+// Manejador de evento multiple
+// Con .addEventListener("","") podemos asignar más de una función al mismo evento. Este recbe dos parámetros el primero será el evento que desencadenará la acción y el segundo será la función que le asignaremos a ese evento.
+const $eventoMultiple = document.getElementById("evento-multiple");
+
+$eventoMultiple.addEventListener("click", holaMundo); // Podemos pasarle una funcíon ya declarada anteriormente o declararla aquí.
+$eventoMultiple.addEventListener("click", (e) => {
+  alert("Manejador de eventos multiple");
+  console.log(e.type);
+  console.log(e.target);
+});
