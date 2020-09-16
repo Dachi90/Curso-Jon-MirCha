@@ -343,7 +343,7 @@ $cards.appendChild($fragment); */
 
 //  *********************************************** Video 70 DOM: Modificando Elementos (Old Style)  ***********************************************
 
-const $cards = document.querySelector(".cards"),
+/* const $cards = document.querySelector(".cards"),
   $newCard = document.createElement("figure"),
   //El método Node.cloneNode() devuelve un duplicado del nodo en el que este método fue llamado.
   //true si los hijos del nodo también deben ser clonados, o false para clonar únicamente al nodo.
@@ -365,4 +365,33 @@ $newCard.classList.add("card");
 //$cards.removeChild($cards.lastElementChild);
 
 // Imprimimos el clon que teniamos guardado en $cloneCards.
-document.body.appendChild($cloneCards);
+//document.body.appendChild($cloneCards); */
+
+//  ********************************************* Video 71 DOM: Modificando Elementos (Cool Style)  *********************************************
+
+/* 
+.insertAdjacent...
+   .insertAdjacentElement(position, el)
+   .insertAdjacentHTML(position, html)
+   .insertAdjacentText(position, text)
+
+Posiciones:
+   beforebegin (hermano anterior)
+   afterbegin (primer hijo)
+   beforeend (último hijo)
+   afterend (hermano siguiente)
+*/
+
+const $cards = document.querySelector(".cards"),
+  $newCard = document.createElement("figure");
+
+$newCard.innerHTML = `
+   <img src="https://placeimg.com/200/200/any" alt="Any">
+   <figcaption>Any</figcaption>
+`;
+$newCard.classList.add("card");
+
+//$cards.insertAdjacentElement("beforebegin", $newCard);
+//$cards.insertAdjacentElement("afterbegin", $newCard);
+//$cards.insertAdjacentElement("beforeend", $newCard);
+$cards.insertAdjacentElement("afterend", $newCard);
