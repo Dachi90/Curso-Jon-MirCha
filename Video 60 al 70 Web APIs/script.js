@@ -302,9 +302,9 @@ meses.forEach((el) => {
 $ul3.appendChild($fragment); // Una vez con todos los elementos cargados en el fragmento los añadimos al elemento ul guardado en la vatiable $ul3
 document.body.appendChild($ul3); // Y finalmente le añadimos el elemento guardado en la variable $ul3 con todos los elementos al body. */
 
-//  *********************************************** Video 68 DOM: Templates HTML  ***********************************************
+//  *********************************************** Video 69 DOM: Templates HTML  ***********************************************
 
-const $cards = document.querySelector(".cards");
+/* const $cards = document.querySelector(".cards");
 const $template = document.getElementById("template-card").content;
 const $fragment = document.createDocumentFragment();
 const cardContent = [
@@ -339,4 +339,30 @@ cardContent.forEach((el) => {
   $fragment.appendChild($clone);
 });
 
-$cards.appendChild($fragment);
+$cards.appendChild($fragment); */
+
+//  *********************************************** Video 70 DOM: Modificando Elementos (Old Style)  ***********************************************
+
+const $cards = document.querySelector(".cards"),
+  $newCard = document.createElement("figure"),
+  //El método Node.cloneNode() devuelve un duplicado del nodo en el que este método fue llamado.
+  //true si los hijos del nodo también deben ser clonados, o false para clonar únicamente al nodo.
+  $cloneCards = $cards.cloneNode(true);
+
+$newCard.innerHTML = `
+   <img src="https://placeimg.com/200/200/any" alt="Any">
+   <figcaption>Any</figcaption>
+`;
+$newCard.classList.add("card");
+
+//El método Node.replaceChild() reemplaza un nodo hijo del elemento especificado por otro. El primer parámetro es el nuevo nodo que introduciremos y el segundo parámetro es el nodo a remplazar.
+//$cards.replaceChild($newCard, $cards.children[2]);
+
+//El método Node.insertBefore() inserta un nodo antes del nodo de referencia como hijo de un nodo padre indicado
+//$cards.insertBefore($newCard, $cards.firstElementChild);
+
+// El método Node.removeChild() elimina un nodo hijo del DOM y puede devolver el nodo eliminado
+//$cards.removeChild($cards.lastElementChild);
+
+// Imprimimos el clon que teniamos guardado en $cloneCards.
+document.body.appendChild($cloneCards);
