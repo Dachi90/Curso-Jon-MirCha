@@ -426,7 +426,7 @@ $eventoMultiple.addEventListener("click", (e) => {
 
 //  ******************************************* Video 73 DOM: eventos con parámetros y remover parámetros  *******************************************
 
-function saludar(nombre = "Desconocid@") {
+/* function saludar(nombre = "Desconocid@") {
   alert(`Hola ${nombre}`);
 }
 
@@ -445,4 +445,20 @@ const removerDobleClick = (e) => {
   $eventoRemover.disabled = true;
 };
 
-$eventoRemover.addEventListener("dblclick", removerDobleClick);
+$eventoRemover.addEventListener("dblclick", removerDobleClick); */
+
+//  ******************************************* Video 74 DOM: flujo de eventos (burbuja y captura)  *******************************************
+
+const $divsEventos = document.querySelectorAll(".eventos-flujo div");
+console.log($divsEventos);
+
+function flujoEventos(e) {
+  console.log(`Hola te saluda ${this.className}, el click lo originó ${e.target.className}`);
+}
+
+// Fase de burbuja, sin especificar el tercer parámetro o poniendo false que es su valor por defecto. Los eventos se propagan hacia su elemento superior.
+//Fase de captura, especificando el tercer parámetro en true. Los eventos se propagan hacia su elemento inferior.
+$divsEventos.forEach((div) => {
+  //div.addEventListener("click", flujoEventos);
+  div.addEventListener("click", flujoEventos, true);
+});
