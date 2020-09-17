@@ -398,7 +398,7 @@ $cards.insertAdjacentElement("afterend", $newCard); */
 
 //  ********************************************* Video 72 DOM: Manejadores de Eventos  *********************************************
 
-function holaMundo() {
+/* function holaMundo() {
   alert("Hola Mundo");
   console.log(event);
 }
@@ -422,4 +422,27 @@ $eventoMultiple.addEventListener("click", (e) => {
   alert("Manejador de eventos multiple");
   console.log(e.type);
   console.log(e.target);
+}); */
+
+//  ******************************************* Video 73 DOM: eventos con parámetros y remover parámetros  *******************************************
+
+function saludar(nombre = "Desconocid@") {
+  alert(`Hola ${nombre}`);
+}
+
+const $eventoMultiple = document.getElementById("evento-multiple");
+
+$eventoMultiple.addEventListener("click", () => {
+  saludar();
+  saludar("Jon");
 });
+
+const $eventoRemover = document.getElementById("evento-remover");
+
+const removerDobleClick = (e) => {
+  alert(`Removiendo el evento de tipo ${e.type}`);
+  $eventoRemover.removeEventListener("dblclick", removerDobleClick);
+  $eventoRemover.disabled = true;
+};
+
+$eventoRemover.addEventListener("dblclick", removerDobleClick);
