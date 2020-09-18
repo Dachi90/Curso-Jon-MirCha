@@ -30,7 +30,13 @@ console.log(document.images); // En este caso no entraría ningun elemento ya qu
 console.log(document.forms); // En este caso no entraría ningun elemento ya que en este ejemplo no tenemos.
 console.log(document.styleSheets); // En este caso no entraría ningun elemento ya que en este ejemplo no tenemos.
 console.log(document.scripts); // En nuestro ejemplo nos muestra dos porque tenemos la extension de Live Server en CS Code el cual inyecta un script en el documento html. */
+/* 
 
+
+
+
+
+*/
 //          *********************************************** Video 62 DOM:Nodos, elementos y selectores ***********************************************
 
 /* console.log(document.getElementsByTagName("li")); // Este método ha sido remplazado por .querySelector("")
@@ -48,7 +54,13 @@ console.log(document.querySelector(".card")); // Nos devolverá solo el primer s
 console.log(document.querySelectorAll(".card")); // Nos devolverá todos los selectores que tengan la clase .card
 console.log(document.querySelectorAll(".card")[2]); // También le podemos indicar la posición que queremos que nos devuelva.
 console.log(document.querySelectorAll("#menu li")); // O indicarle que solo queremos los selectores que esten dentro de otros. */
+/* 
 
+
+
+
+
+*/
 //          *********************************************** Video 63 DOM:Atributos y Data-Attributes ***********************************************
 
 /* // Accediendo al atributo land del elemento html
@@ -76,6 +88,14 @@ console.log($linkIndex.hasAttribute("target")); // Aquí compruebo que efectivam
 console.log($linkIndex.getAttribute("data-description"));
 console.log($linkIndex.dataset);
  */
+
+/* 
+
+
+
+
+
+*/
 
 //          *********************************************** Video 64 DOM:Estilos y variables CSS ***********************************************
 
@@ -127,6 +147,14 @@ $html.style.setProperty("--dark-color", "#000");
 varDarkColor = getComputedStyle($html).getPropertyValue("--dark-color");
 $body.style.setProperty("background-color", varDarkColor); */
 
+/* 
+
+
+
+
+
+*/
+
 //          *********************************************** Video 65 DOM:Clases CSS ***********************************************
 
 /* const $card = document.querySelector(".card");
@@ -154,6 +182,14 @@ console.log($card.classList.contains("rotate-45")); // Nos devuelve un false ya 
 $card.classList.toggle("rotate-45"); // Le vuelvo a añadir la clase rotate-45 para poder remplazarla por otra.
 $card.classList.replace("rotate-45", "rotate-135"); // Remplazamos la calse rotate-45 por la clase rotate-135. */
 
+/* 
+
+
+
+
+
+*/
+
 //          *********************************************** Video 66 DOM:Texto y HTML ***********************************************
 
 /* //Guardamos en una variable el parrafo con el id #que-es.
@@ -178,6 +214,14 @@ $whatIsDom.innerContent = text;
 $whatIsDom.innerHTML = text;
 //La propiedad .outerHTML remplaza el elemento del DOM que le indicamos por el contenido que le estemos pasando.
 $whatIsDom.outerHTML = text; */
+
+/* 
+
+
+
+
+
+*/
 
 //    *********************************************** Video 67 DOM: Traversing (Recorriendo el DOM)  ***********************************************
 
@@ -204,6 +248,14 @@ console.log($cards.nextElementSibling);
 //El método closest() de la interfaz Element devuelve el ascendiente más cercano al elemento actual (o el propio elemento actual) que coincida con el selector proporcionado por parámetro. Si no existe dicho ascendiente, devuelve null.
 console.log($cards.closest("section")); // En este caso devuelve el mismo elemento ya que no hay un elemento section que este por encima de este.
 console.log($cards.children[3].closest("section")); // Ahora le estamos diciendo que nos devuelva el elemento section padre más cercano del hijo en la posición 3 de $cards. Es decir el section padre más cercano a la cuarta imagen por eso nos devuelve el section que envuelve todas las imagenes. */
+
+/* 
+
+
+
+
+
+*/
 
 //    *********************************************** Video 68 DOM: Creando Elementos yFragmentos  ***********************************************
 
@@ -302,6 +354,14 @@ meses.forEach((el) => {
 $ul3.appendChild($fragment); // Una vez con todos los elementos cargados en el fragmento los añadimos al elemento ul guardado en la vatiable $ul3
 document.body.appendChild($ul3); // Y finalmente le añadimos el elemento guardado en la variable $ul3 con todos los elementos al body. */
 
+/* 
+
+
+
+
+
+*/
+
 //  *********************************************** Video 69 DOM: Templates HTML  ***********************************************
 
 /* const $cards = document.querySelector(".cards");
@@ -341,6 +401,14 @@ cardContent.forEach((el) => {
 
 $cards.appendChild($fragment); */
 
+/* 
+
+
+
+
+
+*/
+
 //  *********************************************** Video 70 DOM: Modificando Elementos (Old Style)  ***********************************************
 
 /* const $cards = document.querySelector(".cards"),
@@ -366,6 +434,14 @@ $newCard.classList.add("card");
 
 // Imprimimos el clon que teniamos guardado en $cloneCards.
 //document.body.appendChild($cloneCards); */
+
+/* 
+
+
+
+
+
+*/
 
 //  ********************************************* Video 71 DOM: Modificando Elementos (Cool Style)  *********************************************
 
@@ -396,6 +472,14 @@ $newCard.classList.add("card");
 //$cards.insertAdjacentElement("beforeend", $newCard);
 $cards.insertAdjacentElement("afterend", $newCard); */
 
+/* 
+
+
+
+
+
+*/
+
 //  ********************************************* Video 72 DOM: Manejadores de Eventos  *********************************************
 
 /* function holaMundo() {
@@ -424,6 +508,14 @@ $eventoMultiple.addEventListener("click", (e) => {
   console.log(e.target);
 }); */
 
+/* 
+
+
+
+
+
+*/
+
 //  ******************************************* Video 73 DOM: eventos con parámetros y remover parámetros  *******************************************
 
 /* function saludar(nombre = "Desconocid@") {
@@ -447,9 +539,17 @@ const removerDobleClick = (e) => {
 
 $eventoRemover.addEventListener("dblclick", removerDobleClick); */
 
+/* 
+
+
+
+
+
+*/
+
 //  ******************************************* Video 74 DOM: flujo de eventos (burbuja y captura)  *******************************************
 
-const $divsEventos = document.querySelectorAll(".eventos-flujo div");
+/* const $divsEventos = document.querySelectorAll(".eventos-flujo div");
 console.log($divsEventos);
 
 function flujoEventos(e) {
@@ -461,4 +561,32 @@ function flujoEventos(e) {
 $divsEventos.forEach((div) => {
   //div.addEventListener("click", flujoEventos);
   div.addEventListener("click", flujoEventos, true);
+});
+ */
+
+/* 
+
+
+
+
+*/
+
+//  ******************************************* Video 75 DOM: stopPropagation & preventDefault  *******************************************
+
+const $divsEventos = document.querySelectorAll(".eventos-flujo div");
+const $linkEvento = document.querySelector(".eventos-flujo a");
+
+function flujoEventos(e) {
+  console.log(`Hola te saluda ${this.className}, el click lo originó ${e.target.className}`);
+  e.stopPropagation(); // El método stopPropagation() de la interfaz Event evita la propagación adicional del evento actual en las fases de captura y burbuja.
+}
+
+$divsEventos.forEach((div) => {
+  //div.addEventListener("click", flujoEventos);
+  div.addEventListener("click", flujoEventos, false);
+});
+
+$linkEvento.addEventListener("click", (e) => {
+  alert("Hola soy tu amigo y docente Jonathan MirCha");
+  e.preventDefault(); // Cancela el evento si este es cancelable, sin detener el resto del funcionamiento del evento, es decir, puede ser llamado de nuevo.
 });
