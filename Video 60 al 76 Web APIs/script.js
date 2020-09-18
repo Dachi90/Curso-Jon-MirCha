@@ -573,7 +573,7 @@ $divsEventos.forEach((div) => {
 
 //  ******************************************* Video 75 DOM: stopPropagation & preventDefault  *******************************************
 
-const $divsEventos = document.querySelectorAll(".eventos-flujo div");
+/* const $divsEventos = document.querySelectorAll(".eventos-flujo div");
 const $linkEvento = document.querySelector(".eventos-flujo a");
 
 function flujoEventos(e) {
@@ -589,4 +589,34 @@ $divsEventos.forEach((div) => {
 $linkEvento.addEventListener("click", (e) => {
   alert("Hola soy tu amigo y docente Jonathan MirCha");
   e.preventDefault(); // Cancela el evento si este es cancelable, sin detener el resto del funcionamiento del evento, es decir, puede ser llamado de nuevo.
+}); */
+
+/* 
+
+
+
+
+
+*/
+
+//  ******************************************* Video 76 DOM: Delegación de Eventos  *******************************************
+
+// Delegación de eventos es un mecanismo a través del cual evitamos asignar event listeners a múltiples nodos específicos del DOM, asignando un event listener a solo un nodo padre que contiene el resto de estos nodos
+
+function flujoEventos(e) {
+  console.log(`Hola te saluda ${this.className}, el click lo originó ${e.target.className}`);
+  e.stopPropagation(); // El método stopPropagation() de la interfaz Event evita la propagación adicional del evento actual en las fases de captura y burbuja.
+}
+
+document.addEventListener("click", (e) => {
+  console.log("Click en ", e.target);
+
+  if (e.target.matches(".eventos-flujo div")) {
+    flujoEventos(e);
+  }
+
+  if (e.target.matches(".eventos-flujo a")) {
+    alert("Hola soy tu amigo y docente Jonathan MirCha");
+    e.preventDefault();
+  }
 });
