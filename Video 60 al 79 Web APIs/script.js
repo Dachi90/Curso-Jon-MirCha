@@ -677,7 +677,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
 //  ******************************************* Video 78 BOM: Métodos  *******************************************
 
-//window.alert("esto es una alerta");
+/* //window.alert("esto es una alerta");
 alert("esto es una alerta");
 //window.confirm("esto es una confirmación");
 confirm("esto es una confirmación");
@@ -704,4 +704,56 @@ $btnCerrar.addEventListener("click", (e) => {
 
 $btnImprimir.addEventListener("click", (e) => {
   window.print();
-});
+}); */
+
+/* 
+
+
+
+
+
+*/
+
+//  ******************************************* Video 79 BOM: Objetos: URL, Historial y Navegador  *******************************************
+
+/* console.log("******* Objeto URL (location) *******");
+// La interface Location representa la ubicación (URL) del objeto al que esta vinculado. Los cambios hechos en ella son reflejados en el objeto al cual está relacionado. Ambas interfaces, Document y Window tienen una interface Location asignada, accessible desde Document.location y Window.location respectivamente.
+console.log(location);
+
+// Estas son algunas de las propiedades del objeto location
+console.log(location.origin); // Es un DOMString que contiene la forma canonica del origin (origen) de la URL.
+console.log(location.protocol); //Es un DOMString que contiene el esquema del protocolo de la URL, incluyendo el ':' final.
+console.log(location.host); //Es un DOMString que contiene el host, el cual esta compuesta por: hostname,  ':', y el port de la URL.
+console.log(location.hostname); // Es un DOMString que contiene el dominio de la URL.
+console.log(location.port); // Es un DOMString que contiene el numero del puerto de la URL.
+console.log(location.href); //Es un DOMString que contiene la URL completa. Si es cambiada, el documento asociado navegará a la nueva pagina. Puede ser cambiada desde un origen diferente que el asociado al documento.
+console.log(location.hash); //Es un DOMString que contiene un '#' seguido por el fragmento identificador de la URL.
+console.log(location.pathname); // Es un DOMString que contiene el '/' inicial, seguido por la ruta de la URL.
+ */
+
+/*
+
+*/
+
+/* console.log("******* Objeto historial (history) *******");
+//La propiedad de solo lectura Window.history regresa una referencia al objeto History, quien provee una interfaz para manipular el historial de sesión del navegador (páginas visitadas en el tab o marco de la pagina actual cargada).
+console.log(history);
+ */
+
+/*
+
+*/
+
+/* console.log("******* Objeto navegador (navigator) *******");
+//La interfaz Navigator representa el estado y la identidad del user agent. Es completamente consultable y es posible registrar scripts para que ejecuten diversas actividades
+console.log(navigator);
+
+console.log(navigator.connection); // Provee un objeto NetworkInformation con la información sobre la conexión a la red de un dispositivo.
+console.log(navigator.geolocation); // Devuelve un objeto Geolocation que permite el acceso a la ubicación del dispositivo.
+console.log(navigator.mediaDevices); // Devuelve una referencia a la interfaz MediaDevices.
+console.log(navigator.mimeTypes); // Devuelve un MimeTypeArray que enlista los tipos MIME soportados por el navegador.
+console.log(navigator.onLine); // Devuelve un valor Boolean que indica si el navegador está trabajando en línea.
+console.log(navigator.serviceWorker); // Devuelve un objeto ServiceWorkerContainer, el cual provee acceso a registro, eliminación, actualización y comunicación con los objetos ServiceWorker para documentos asociados.
+console.log(navigator.storage);
+console.log(navigator.usb);
+console.log(navigator.userAgent); // Devuelve la cadena de agente usuario del navegador actual. */
