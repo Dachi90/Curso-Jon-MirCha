@@ -603,7 +603,7 @@ $linkEvento.addEventListener("click", (e) => {
 
 // Delegación de eventos es un mecanismo a través del cual evitamos asignar event listeners a múltiples nodos específicos del DOM, asignando un event listener a solo un nodo padre que contiene el resto de estos nodos
 
-function flujoEventos(e) {
+/* function flujoEventos(e) {
   console.log(`Hola te saluda ${this.className}, el click lo originó ${e.target.className}`);
   e.stopPropagation(); // El método stopPropagation() de la interfaz Event evita la propagación adicional del evento actual en las fases de captura y burbuja.
 }
@@ -619,4 +619,50 @@ document.addEventListener("click", (e) => {
     alert("Hola soy tu amigo y docente Jonathan MirCha");
     e.preventDefault();
   }
+}); */
+
+/* 
+
+
+
+
+
+*/
+
+//  ******************************************* Video 77 BOM: Propiedades y Eventos  *******************************************
+
+// El evento resize se produce cuando la ventana del navegador es redimensionada.
+window.addEventListener("resize", (e) => {
+  console.clear();
+  console.log("*********** Evento resize ************");
+  console.log(window.innerWidth); //Representa el ancho (en pixeles) del viewport.
+  console.log(window.innerHeight); //Representa la altura (en pixeles) del viewport.
+  console.log(window.outerWidth); //Representa el ancho de toda la ventana, incluyendo la barra de notificaciones (si se encuentra) y los bordes.
+  console.log(window.outerHeight); //Representa el alto de toda la ventana, incluyendo la barra de notificaciones (si se encuentra) y los bordes.
+  console.log(e);
+});
+
+// El evento scroll se produce cuando la vista del documento o un elemento es deslizado.
+window.addEventListener("scroll", (e) => {
+  console.clear();
+  console.log("*********** Evento scroll ************");
+  console.log(window.scrollX); // Retorna el número de pixels que el documento ha sido desplazado horizontalmente.
+  console.log(window.scrollY); // Retorna el número de pixels que el documento ha sido desplazado verticalmente.
+  console.log(e);
+});
+
+// El evento load se dispara cuando un recurso y sus recursos dependientes han terminado de cargar. Es decir no solo cuando se ha cargado el documento html, sino todos los css, js y demás recursos dependientes de página.
+window.addEventListener("load", (e) => {
+  console.log("*********** Evento load ************");
+  console.log(window.screenX); // Retorna el número de pixels que el documento ha sido desplazado horizontalmente cuando la ventana del navegador haya terminado de cargar.
+  console.log(window.screenY); // Retorna el número de pixels que el documento ha sido desplazado verticalmente cuando la ventana del navegador haya terminado de cargar.
+  console.log(e);
+});
+
+// El evento DOMContentLoaded es disparado cuando el documento HTML ha sido completamente cargado y parseado, sin esperar hojas de estilo, images y subframes para  finalizar la carga.
+document.addEventListener("DOMContentLoaded", (e) => {
+  console.log("*********** Evento DOMContentLoaded ************");
+  console.log(window.screenX); // Retorna el número de pixels que el documento ha sido desplazado horizontalmente cuando la ventana del navegador haya terminado de cargar.
+  console.log(window.screenY); // Retorna el número de pixels que el documento ha sido desplazado verticalmente cuando la ventana del navegador haya terminado de cargar.
+  console.log(e);
 });
