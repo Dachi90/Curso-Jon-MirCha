@@ -631,7 +631,7 @@ document.addEventListener("click", (e) => {
 
 //  ******************************************* Video 77 BOM: Propiedades y Eventos  *******************************************
 
-// El evento resize se produce cuando la ventana del navegador es redimensionada.
+/* // El evento resize se produce cuando la ventana del navegador es redimensionada.
 window.addEventListener("resize", (e) => {
   console.clear();
   console.log("*********** Evento resize ************");
@@ -665,4 +665,43 @@ document.addEventListener("DOMContentLoaded", (e) => {
   console.log(window.screenX); // Retorna el número de pixels que el documento ha sido desplazado horizontalmente cuando la ventana del navegador haya terminado de cargar.
   console.log(window.screenY); // Retorna el número de pixels que el documento ha sido desplazado verticalmente cuando la ventana del navegador haya terminado de cargar.
   console.log(e);
+}); */
+
+/* 
+
+
+
+
+
+*/
+
+//  ******************************************* Video 78 BOM: Métodos  *******************************************
+
+//window.alert("esto es una alerta");
+alert("esto es una alerta");
+//window.confirm("esto es una confirmación");
+confirm("esto es una confirmación");
+//window.prompt("Aviso", "texto por defecto");
+prompt("Aviso", "texto por defecto");
+
+const $btnAbrir = document.getElementById("abrir-ventana"),
+  $btnCerrar = document.getElementById("cerrar-ventana"),
+  $btnImprimir = document.getElementById("imprimir-ventana");
+let ventana;
+
+//El metodo open() crea una nueva ventana secundaria del navegador, similar a seleccionar Nueva ventana desde el menú archivo. El parámetro url especifica la URL a ser solicitada y cargada en la nueva ventana. Si url es una cadena de caracteres vacia, entonces se creará una nueva ventana en blanco (URL about:blank) con las barras de herramientas por defecto de la ventana principal
+$btnAbrir.addEventListener("click", (e) => {
+  //window.open("http://www.jonmircha.com");
+  ventana = open("http://www.jonmircha.com"); //guardamos la ventana que abrimos en una variable para luego cerrarla con el método .close()
+});
+
+//Cierra la ventana actual, o la ventana en la cual fue llamada.
+$btnCerrar.addEventListener("click", (e) => {
+  ventana.close();
+});
+
+// Abre el diálogo para imprimir el documento actual. En la mayoría de navegadores, este método bloquea mientras el díalogo de impresión esté abierto, sin embargo, en algunas versiones recientes de Safari podría retornar de inmediato.
+
+$btnImprimir.addEventListener("click", (e) => {
+  window.print();
 });
