@@ -8,6 +8,7 @@ body {
   height: 100%;
   scroll-behavior: smooth;
 }
+
 /* Cabecera*/
 .cabecera {
   background-color: #f7df1e;
@@ -16,6 +17,11 @@ body {
   align-items: center;
   height: 10%;
 }
+
+.titulo {
+  font-family: sans-serif;
+}
+
 /* Menu lateral*/
 .contenedor-menu {
   position: fixed;
@@ -44,6 +50,7 @@ body {
 }
 
 .items-menu a {
+  font-family: sans-serif;
   width: 100%;
   height: 100%;
   display: flex;
@@ -63,6 +70,7 @@ body {
 .mostrar-menu {
   left: 0;
 }
+
 /* Botón menú*/
 .fas {
   font-size: 24px;
@@ -80,16 +88,31 @@ body {
 
   border: 1px solid black;
 }
+
 /* Secciones principales*/
 .secciones {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
   height: 100%;
 
   border: 1px solid black;
 }
 
-.subtitulo {
+.titulo-seccion {
+  font-family: sans-serif;
   padding: 0.5rem;
+}
+
+/* Seccion 1*/
+.subtitulo {
+  font-family: monospace;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+.reloj {
+  font-family: fantasy;
+  font-size: 3rem;
+}
+
+.botones {
+  padding: 0.2rem;
 }

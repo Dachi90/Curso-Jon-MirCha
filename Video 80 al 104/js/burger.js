@@ -11,6 +11,5 @@ export default function hamburgerMenu(btn, menu, menuLink) {
       d.querySelector(menu).classList.remove("mostrar-menu");
       d.querySelector(btn).classList.remove("fa-times-circle");
     }
-    console.log(e.target);
   });
 }
