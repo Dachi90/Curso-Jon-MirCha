@@ -1,14 +1,13 @@
-export default function actualizarHora(activarReloj, ocultarReloj, iniciarAlarma, detenerAlarma) {
+// Función para activar y desactivar el reloj.
+export function actualizarHora(activarReloj, ocultarReloj) {
   const d = document;
   const reloj = document.querySelector(".reloj");
   let interval;
-  let $sonido = document.createElement("audio");
 
   d.addEventListener("click", (e) => {
     if (e.target.matches(activarReloj)) {
       interval = setInterval(function () {
-        let fecha = new Date();
-        let hora = fecha.toLocaleTimeString();
+        let hora = new Date().toLocaleTimeString();
         reloj.innerHTML = hora;
       }, 1000);
       d.getElementById("activarReloj").setAttribute("disabled", "");
@@ -19,7 +18,14 @@ export default function actualizarHora(activarReloj, ocultarReloj, iniciarAlarma
       reloj.innerHTML = "";
       d.getElementById("activarReloj").removeAttribute("disabled");
     }
+  });
+}
 
+// Función para iniciar y desactivar la alarma.
+export function alarmaDigital(iniciarAlarma, detenerAlarma) {
+  const d = document;
+  let $sonido = d.createElement("audio");
+  d.addEventListener("click", (e) => {
     if (e.target.matches(iniciarAlarma)) {
       $sonido.setAttribute("src", "./sonido/alarma.mp3");
       $sonido.play();
