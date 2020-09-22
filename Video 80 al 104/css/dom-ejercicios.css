@@ -134,3 +134,18 @@ body {
   border-radius: 50%;
   background-color: #f7df1e;
 }
+
+/* Sección 3*/
+.countdown {
+  border: 1px dashed #a7950ba1;
+}
+.temporizador {
+  font-family: monospace;
+  font-size: 3rem;
+  padding: 0.5rem;
+}
+.mensaje {
+  font-size: 4rem;
+  color: crimson;
+  font-family: fantasy;
+}
