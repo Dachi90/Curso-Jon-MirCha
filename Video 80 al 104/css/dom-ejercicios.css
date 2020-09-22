@@ -101,13 +101,13 @@ body {
   font-family: sans-serif;
   padding: 0.5rem;
 }
-
-/* Seccion 1*/
 .subtitulo {
   font-family: monospace;
   font-size: 2rem;
   padding: 1rem;
 }
+
+/* Sección 1*/
 .reloj {
   font-family: fantasy;
   font-size: 3rem;
@@ -115,4 +115,22 @@ body {
 
 .botones {
   padding: 0.2rem;
+}
+
+/* Sección 2*/
+
+.stage {
+  display: flex;
+  min-height: 50vh;
+  background-color: #494949;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.ball {
+  margin: auto;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: #f7df1e;
 }
