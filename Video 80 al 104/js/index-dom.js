@@ -9,7 +9,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
   hamburgerMenu(".fas", ".contenedor-menu", ".menu li a");
   actualizarHora("#activarReloj", "#ocultarReloj");
   alarmaDigital("#iniciarAlarma", "#detenerAlarma");
-  countdown("01/01/2021 0:00 AM", "Feliz año nuevo", "#temporizador");
+  countdown("01/01/2021 0:00 AM", "Feliz año nuevo", ".countdown");
 });
 
 d.addEventListener("keydown", (e) => {
