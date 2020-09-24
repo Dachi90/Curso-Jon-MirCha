@@ -37,6 +37,10 @@ body {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
+.mostrar-menu {
+  left: 0;
+}
+
 .menu {
   width: 100%;
   height: 50%;
@@ -67,13 +71,8 @@ body {
   color: black;
 }
 
-.mostrar-menu {
-  left: 0;
-}
-
 /* Botón menú*/
 .fas {
-  font-size: 24px;
   padding: 1rem;
 }
 
@@ -88,8 +87,69 @@ body {
 
   border: 1px solid black;
 }
+.btn:hover {
+  background-color: #343430;
+  color: #f7df1e;
+}
+
+/*Botón ScrollTop */
+.scrollTop {
+  position: fixed;
+  z-index: 999;
+  bottom: -3.5rem;
+  right: 4rem;
+  border-radius: 50%;
+  text-decoration: none;
+  cursor: default;
+  background-color: #f7df1e;
+
+  transition: bottom 500ms ease;
+  border: 1px solid black;
+}
+
+.showScrollTop {
+  bottom: 0.5rem;
+}
+
+.scrollTop:hover {
+  background-color: #343430;
+  color: #f7df1e;
+}
+
+/* Botón dark mode */
+
+.darkModeBtn {
+  position: fixed;
+  z-index: 999;
+  bottom: 0.5rem;
+  left: 0.5rem;
+  border-radius: 50%;
+  border: 1px solid black;
+  background-color: #f7df1e;
+}
+
+.darkModeBtn:hover {
+  background-color: #343430;
+  color: #f7df1e;
+}
+
+/* Estilos Dark Mode */
+
+.darkMode {
+  background-color: #141414;
+  color: #f7df1e;
+}
+
+.botonesDark:hover {
+  background-color: #696969;
+  color: #f7df1e;
+}
 
 /* Secciones principales*/
+.contenedor {
+  height: 100%;
+}
+
 .secciones {
   text-align: center;
   height: 100%;
