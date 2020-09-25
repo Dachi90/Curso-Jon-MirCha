@@ -5,14 +5,6 @@ export default function darkMode(seccion, btn, dataDark) {
   const $botones = d.querySelectorAll(dataDark);
   let ls = localStorage;
 
-  /* function lightMode(){
-
-  }
-
-  function darkMode(){
-
-  }
- */
   function swapMode() {
     $seccion.forEach((el) => {
       el.classList.toggle("darkMode");
