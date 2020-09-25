@@ -13,7 +13,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
   alarmaDigital("#iniciarAlarma", "#detenerAlarma");
   countdown("01/01/2021 0:00 AM", "Feliz año nuevo", ".countdown");
   scrollTop("scrollTop");
-  darkMode(".secciones", "#darkModeBtn");
+  darkMode(".secciones", "#darkModeBtn", "data-dark");
 });
 
 d.addEventListener("keydown", (e) => {

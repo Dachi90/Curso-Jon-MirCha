@@ -1,10 +1,8 @@
-export default function darkMode(seccion, btn) {
+export default function darkMode(seccion, btn, dataDark) {
   const d = document;
   const $seccion = d.querySelectorAll(seccion);
   const $btn = d.querySelector(btn);
-  const $botonMenuDark = d.querySelector(".btn");
-  const $botonScrollDark = d.querySelector(".scrollTop");
-  const $botonDarkDark = d.querySelector(".darkModeBtn");
+  const $botones = d.querySelectorAll(dataDark);
 
   d.addEventListener("click", (e) => {
     if (e.target.matches(btn)) {
@@ -12,10 +10,9 @@ export default function darkMode(seccion, btn) {
         el.classList.toggle("darkMode");
       });
       $btn.classList.toggle("fa-sun");
-      $botonMenuDark.classList.toggle("botonesDark");
-      $botonScrollDark.classList.toggle("botonesDark");
-      $botonDarkDark.classList.toggle("botonesDark");
+      $botones.forEach((el) => {
+        el.classList.toggle("botonesDark");
+      });
     }
   });
 }
-/* $seccion.classList.toggle("darkMode"); */
