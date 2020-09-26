@@ -211,3 +211,15 @@ body {
   color: crimson;
   font-family: fantasy;
 }
+
+/* Seccion 4*/
+
+.enlaces {
+  margin-top: 50px;
+  color: #7a7129;
+  font-size: 2rem;
+  display: block;
+}
+.enlaces:hover {
+  color: #202020;
+}
