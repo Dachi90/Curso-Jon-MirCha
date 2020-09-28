@@ -8,6 +8,7 @@ import responsiveMedia from "./responsive-js.js";
 import responsiveTester from "./test-responsive.js";
 import userDevideInfo from "./deteccion-dispositivos.js";
 import conexion from "./detectar-conexion.js";
+import detectarCam from "./detectar-camara.js";
 
 const d = document;
 
@@ -26,6 +27,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
   );
   responsiveTester("responsive-tester");
   userDevideInfo("user-device");
+  detectarCam("camara");
 });
 
 d.addEventListener("keydown", (e) => {
