@@ -7,6 +7,7 @@ import darkMode from "./dark-mode.js";
 import responsiveMedia from "./responsive-js.js";
 import responsiveTester from "./test-responsive.js";
 import userDevideInfo from "./deteccion-dispositivos.js";
+import conexion from "./detectar-conexion.js";
 
 const d = document;
 
@@ -33,3 +34,4 @@ d.addEventListener("keydown", (e) => {
 });
 
 darkMode(".secciones", "#darkModeBtn", "data-dark");
+conexion();
