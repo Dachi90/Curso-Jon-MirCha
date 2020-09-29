@@ -280,3 +280,20 @@ body {
   opacity: 0;
   order: 1;
 }
+
+/* Seccion 11 Sorteo digital */
+
+.boton-sorteo {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border-radius: 20%;
+  box-shadow: 5px 5px gray;
+  outline: none;
+}
+
+.ganador-sorteo {
+  background-color: green;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: gold;
+}
