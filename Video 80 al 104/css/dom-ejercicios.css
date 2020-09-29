@@ -45,7 +45,7 @@ body {
 
 .menu {
   width: 100%;
-  height: 50%;
+  height: 80vh;
   display: flex;
   flex-direction: column;
 }
@@ -151,7 +151,10 @@ body {
 
 .secciones {
   text-align: center;
-  height: 100vh;
+  min-height: 100vh;
+  padding-top: 4rem;
+  margin-left: auto;
+  margin-right: auto;
 
   border: 1px solid black;
 }
@@ -247,4 +250,33 @@ body {
 
 .offline {
   background-color: red;
+}
+
+/* Seccion 10 Filtro de busqueda */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.card {
+  background-color: #222;
+  color: #f7df1e;
+  transition: all 0.5s ease-out;
+  margin: 0.5rem;
+}
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card figcaption {
+  padding: 1rem;
+}
+
+.filter {
+  /* display: none; */
+  visibility: hidden;
+  opacity: 0;
+  order: 1;
 }

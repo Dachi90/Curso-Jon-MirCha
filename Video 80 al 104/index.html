@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/dom-ejercicios.css" />
   </head>
-  <body>
+  <body id="top">
     <header class="cabecera" id="cabecera">
       <h1 class="titulo">Ejercicios del DOM</h1>
     </header>
@@ -22,15 +22,19 @@
         <li class="items-menu"><a href="#section6">Detección de dispositivos (User Agent)</a></li>
         <li class="items-menu"><a href="#section7">Detección de la conexión</a></li>
         <li class="items-menu"><a href="#section8">Detección de cámara</a></li>
-        <li class="items-menu"><a href="#section9">Section 9</a></li>
-        <li class="items-menu"><a href="#section10">Section 10</a></li>
+        <li class="items-menu"><a href="#section9">Geolocalización</a></li>
+        <li class="items-menu"><a href="#section10">Filtro de busqueda</a></li>
+        <li class="items-menu"><a href="#section11">Section 11</a></li>
+        <li class="items-menu"><a href="#section12">Section 12</a></li>
+        <li class="items-menu"><a href="#section13">Section 13</a></li>
+        <li class="items-menu"><a href="#section14">Section 14</a></li>
       </nav>
     </div>
 
     <div class="btn">
       <i class="fas fa-bars" id="btn"></i>
     </div>
-    <a href="#cabecera" class="scrollTop" id="scrollTop">
+    <a href="#top" class="scrollTop" id="scrollTop">
       <i class="fas fa-arrow-up"></i>
     </a>
     <div class="darkModeBtn">
@@ -98,11 +102,51 @@
     </section>
 
     <section class="secciones" id="section9" data-dark>
-      <h2 class="subtitulo">Sección 9</h2>
+      <h2 class="subtitulo">Geolocalización</h2>
+      <div id="mapa"></div>
     </section>
 
     <section class="secciones" id="section10" data-dark>
-      <h2 class="subtitulo">Sección 10</h2>
+      <h2 class="subtitulo">Filtro de busqueda</h2>
+      <input type="search" class="card-filter" placeholder="Buscar" />
+      <article class="cards">
+        <figure class="card">
+          <img src="https://placeimg.com/200/200/tech" alt="Tech" />
+          <figcaption>Tech</figcaption>
+        </figure>
+        <figure class="card">
+          <img src="https://placeimg.com/200/200/animals" alt="Animals" />
+          <figcaption>Animals</figcaption>
+        </figure>
+        <figure class="card">
+          <img src="https://placeimg.com/200/200/arch" alt="Arch" />
+          <figcaption>Arch</figcaption>
+        </figure>
+        <figure class="card">
+          <img src="https://placeimg.com/200/200/people" alt="People" />
+          <figcaption>People</figcaption>
+        </figure>
+        <figure class="card">
+          <img src="https://placeimg.com/200/200/nature" alt="Nature" />
+          <figcaption>Nature</figcaption>
+        </figure>
+      </article>
+    </section>
+
+    <section class="secciones" id="section11" data-dark>
+      <h2 class="subtitulo">Sección 11</h2>
+    </section>
+
+    <section class="secciones" id="section12" data-dark>
+      <h2 class="subtitulo">Sección 12</h2>
+    </section>
+
+    <section class="secciones" id="section13" data-dark>
+      <h2 class="subtitulo">Sección 13</h2>
+    </section>
+
+    <section class="secciones" id="section14" data-dark>
+      <h2 class="subtitulo">Sección 14</h2>
     </section>
 
     <script src="js/index-dom.js" type="module"></script>
