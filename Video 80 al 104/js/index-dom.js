@@ -12,6 +12,7 @@ import detectarCam from "./detectar-camara.js";
 import getGeolocation from "./geolocalizacion.js";
 import busqueda from "./filtro-busqueda.js";
 import sorteo from "./sorteo-digital.js";
+import slider from "./responsive-slider.js";
 
 const d = document;
 
@@ -34,6 +35,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
   getGeolocation("mapa");
   busqueda(".card-filter", ".card");
   sorteo(".lista-sorteo", ".boton-sorteo");
+  slider(".slider-slide", ".next", ".prev");
 });
 
 d.addEventListener("keydown", (e) => {
