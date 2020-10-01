@@ -13,6 +13,8 @@ import getGeolocation from "./geolocalizacion.js";
 import busqueda from "./filtro-busqueda.js";
 import sorteo from "./sorteo-digital.js";
 import slider from "./responsive-slider.js";
+import swapMenu from "./menu-desktop.js";
+import scrollSpy from "./scroll-espia.js";
 
 const d = document;
 
@@ -36,6 +38,8 @@ d.addEventListener("DOMContentLoaded", (e) => {
   busqueda(".card-filter", ".card");
   sorteo(".lista-sorteo", ".boton-sorteo");
   slider(".slider-slide", ".next", ".prev");
+  swapMenu("(min-width: 1024px)");
+  scrollSpy();
 });
 
 d.addEventListener("keydown", (e) => {

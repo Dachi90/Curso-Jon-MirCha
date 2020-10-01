@@ -23,8 +23,73 @@ body {
 .titulo {
   font-family: sans-serif;
 }
+/* Contenedor general*/
+.contenedor-general {
+  display: flex;
+}
 
-/* Menu lateral*/
+/* Contenedor Secciones*/
+
+.contenedor-secciones-desktop {
+  width: 80%;
+  transition: width 0.3s ease;
+}
+
+.contenedor-secciones-mobile {
+  width: 100%;
+}
+
+/* Menú desktop*/
+
+.contenedor-menu-desktop {
+  position: fixed;
+  right: 0;
+  height: 93vh;
+  width: 20%;
+  transition: right 0.3s ease;
+
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.menu-desktop {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.items-menu-desktop {
+  list-style: none;
+  height: inherit;
+}
+
+.items-menu-desktop a {
+  height: inherit;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #f7df1e;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.items-menu-desktop a:hover,
+.items-menu-desktop a.active {
+  background-color: #f7df1e;
+  color: black;
+}
+
+.ocultar-menu-desktop {
+  position: fixed;
+  right: -20%;
+  height: 93vh;
+  width: 20%;
+  transition: right 0.3s ease;
+
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Menú lateral*/
 .contenedor-menu {
   position: fixed;
   top: 0;
@@ -84,7 +149,7 @@ body {
   bottom: 0.5rem;
   right: 0.5rem;
   border-radius: 50%;
-
+  transition: bottom 500ms ease;
   background-color: #f7df1e;
 
   border: 1px solid black;
@@ -92,6 +157,10 @@ body {
 .btn:hover {
   background-color: #343430;
   color: #f7df1e;
+}
+
+.hideBtn {
+  bottom: -3.5rem;
 }
 
 /*Botón ScrollTop */
@@ -104,13 +173,10 @@ body {
   text-decoration: none;
   cursor: default;
   background-color: #f7df1e;
+  color: #222;
 
-  transition: bottom 500ms ease;
+  transition: all 500ms ease;
   border: 1px solid black;
-}
-
-.showScrollTop {
-  bottom: 0.5rem;
 }
 
 .scrollTop:hover {
@@ -118,6 +184,24 @@ body {
   color: #f7df1e;
 }
 
+.scrollTopDesktop {
+  position: fixed;
+  z-index: 999;
+  bottom: -3.5rem;
+  left: 4rem;
+  border-radius: 50%;
+  text-decoration: none;
+  cursor: default;
+  background-color: #f7df1e;
+  color: #222;
+
+  transition: all 500ms ease;
+  border: 1px solid black;
+}
+
+.showScrollTop {
+  bottom: 0.5rem;
+}
 /* Botón dark mode */
 
 .darkModeBtn {

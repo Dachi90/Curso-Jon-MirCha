@@ -32,7 +32,7 @@
       </nav>
     </div>
 
-    <div class="btn">
+    <div class="btn" id="btnMobile">
       <i class="fas fa-bars" id="btn"></i>
     </div>
     <a href="#top" class="scrollTop" id="scrollTop">
@@ -42,153 +42,177 @@
       <i class="fas fa-moon" id="darkModeBtn"></i>
     </div>
 
-    <section class="secciones" id="section1" data-dark>
-      <h2 class="subtitulo">Reloj digital y alarma sonora</h2>
-      <div class="reloj" id="reloj"></div>
-      <button class="botones" id="activarReloj">Mostar reloj</button>
-      <button class="botones" id="ocultarReloj">Ocultar reloj</button>
-      <button class="botones" id="iniciarAlarma">Iniciar alarma</button>
-      <button class="botones" id="detenerAlarma">Detener alarma</button>
-    </section>
+    <div class="contenedor-general">
+      <div class="contenedor-secciones-mobile" id="contenedor-secciones">
+        <section class="secciones" id="section1" data-dark data-scroll-spy>
+          <h2 class="subtitulo">Reloj digital y alarma sonora</h2>
+          <div class="reloj" id="reloj"></div>
+          <button class="botones" id="activarReloj">Mostar reloj</button>
+          <button class="botones" id="ocultarReloj">Ocultar reloj</button>
+          <button class="botones" id="iniciarAlarma">Iniciar alarma</button>
+          <button class="botones" id="detenerAlarma">Detener alarma</button>
+        </section>
 
-    <section class="secciones" id="section2" data-dark>
-      <h2 class="subtitulo">Eventos de teclado</h2>
-      <article class="stage">
-        <div class="ball"></div>
-      </article>
-    </section>
+        <section class="secciones" id="section2" data-dark data-scroll-spy>
+          <h2 class="subtitulo">Eventos de teclado</h2>
+          <article class="stage">
+            <div class="ball"></div>
+          </article>
+        </section>
 
-    <section class="secciones" id="section3" data-dark>
-      <h2 class="subtitulo">Countdown</h2>
-      <div class="countdown"></div>
-      <div class="mensaje"></div>
-    </section>
+        <section class="secciones" id="section3" data-dark data-scroll-spy>
+          <h2 class="subtitulo">Countdown</h2>
+          <div class="countdown"></div>
+          <div class="mensaje"></div>
+        </section>
 
-    <section class="secciones" id="section4" data-dark>
-      <h2 class="subtitulo">Responsive Js</h2>
-      <div id="youtube"></div>
-      <div id="gmaps"></div>
-    </section>
+        <section class="secciones" id="section4" data-dark data-scroll-spy>
+          <h2 class="subtitulo">Responsive Js</h2>
+          <div id="youtube"></div>
+          <div id="gmaps"></div>
+        </section>
 
-    <section class="secciones" id="section5" data-dark>
-      <h2 class="subtitulo">Responsive Tester</h2>
-      <form id="responsive-tester">
-        <input class="inputs" type="url" name="direccion" placeholder="URL" required />
-        <br />
-        <input class="inputs" type="text" name="ancho" placeholder="Width" required />
-        <br />
-        <input class="inputs" type="text" name="alto" placeholder="Height" required />
-        <br />
+        <section class="secciones" id="section5" data-dark data-scroll-spy>
+          <h2 class="subtitulo">Responsive Tester</h2>
+          <form id="responsive-tester">
+            <input class="inputs" type="url" name="direccion" placeholder="URL" required />
+            <br />
+            <input class="inputs" type="text" name="ancho" placeholder="Width" required />
+            <br />
+            <input class="inputs" type="text" name="alto" placeholder="Height" required />
+            <br />
 
-        <input class="inputs" type="submit" name="probar" value="Probar" />
-        <input class="inputs" type="button" name="cerrar" value="Cerrar" />
-      </form>
-    </section>
+            <input class="inputs" type="submit" name="probar" value="Probar" />
+            <input class="inputs" type="button" name="cerrar" value="Cerrar" />
+          </form>
+        </section>
 
-    <section class="secciones" id="section6" data-dark>
-      <h2 class="subtitulo">
-        Detección de dispositivos <br />
-        (User Agent)
-      </h2>
-      <div id="user-device"></div>
-    </section>
+        <section class="secciones" id="section6" data-dark data-scroll-spy>
+          <h2 class="subtitulo">
+            Detección de dispositivos <br />
+            (User Agent)
+          </h2>
+          <div id="user-device"></div>
+        </section>
 
-    <section class="secciones" id="section7" data-dark>
-      <h2 class="subtitulo">Detección de la conexión</h2>
-    </section>
+        <section class="secciones" id="section7" data-dark data-scroll-spy>
+          <h2 class="subtitulo">Detección de la conexión</h2>
+        </section>
 
-    <section class="secciones" id="section8" data-dark>
-      <h2 class="subtitulo">Detección de cámara</h2>
-      <video id="camara"></video>
-    </section>
+        <section class="secciones" id="section8" data-dark data-scroll-spy>
+          <h2 class="subtitulo">Detección de cámara</h2>
+          <video id="camara"></video>
+        </section>
 
-    <section class="secciones" id="section9" data-dark>
-      <h2 class="subtitulo">Geolocalización</h2>
-      <div id="mapa"></div>
-    </section>
+        <section class="secciones" id="section9" data-dark data-scroll-spy>
+          <h2 class="subtitulo">Geolocalización</h2>
+          <div id="mapa"></div>
+        </section>
 
-    <section class="secciones" id="section10" data-dark>
-      <h2 class="subtitulo">Filtro de busqueda</h2>
-      <input type="search" class="card-filter" placeholder="Buscar" />
-      <article class="cards">
-        <figure class="card">
-          <img src="https://placeimg.com/200/200/tech" alt="Tech" />
-          <figcaption>Tech</figcaption>
-        </figure>
-        <figure class="card">
-          <img src="https://placeimg.com/200/200/animals" alt="Animals" />
-          <figcaption>Animals</figcaption>
-        </figure>
-        <figure class="card">
-          <img src="https://placeimg.com/200/200/arch" alt="Arch" />
-          <figcaption>Arch</figcaption>
-        </figure>
-        <figure class="card">
-          <img src="https://placeimg.com/200/200/people" alt="People" />
-          <figcaption>People</figcaption>
-        </figure>
-        <figure class="card">
-          <img src="https://placeimg.com/200/200/nature" alt="Nature" />
-          <figcaption>Nature</figcaption>
-        </figure>
-      </article>
-    </section>
+        <section class="secciones" id="section10" data-dark data-scroll-spy>
+          <h2 class="subtitulo">Filtro de busqueda</h2>
+          <input type="search" class="card-filter" placeholder="Buscar" />
+          <article class="cards">
+            <figure class="card">
+              <img src="https://placeimg.com/200/200/tech" alt="Tech" />
+              <figcaption>Tech</figcaption>
+            </figure>
+            <figure class="card">
+              <img src="https://placeimg.com/200/200/animals" alt="Animals" />
+              <figcaption>Animals</figcaption>
+            </figure>
+            <figure class="card">
+              <img src="https://placeimg.com/200/200/arch" alt="Arch" />
+              <figcaption>Arch</figcaption>
+            </figure>
+            <figure class="card">
+              <img src="https://placeimg.com/200/200/people" alt="People" />
+              <figcaption>People</figcaption>
+            </figure>
+            <figure class="card">
+              <img src="https://placeimg.com/200/200/nature" alt="Nature" />
+              <figcaption>Nature</figcaption>
+            </figure>
+          </article>
+        </section>
 
-    <section class="secciones" id="section11" data-dark>
-      <h2 class="subtitulo">Sorteo digital</h2>
-      <ul class="lista-sorteo">
-        <li>JavaScript</li>
-        <li>PHP</li>
-        <li>Java</li>
-        <li>C</li>
-        <li>Phyton</li>
-        <li>Ruby</li>
-        <li>Go</li>
-        <li>Visual Basic</li>
-        <li>Rust</li>
-        <li>Perl</li>
-      </ul>
-      <button class="boton-sorteo">Obtener ganador</button>
-    </section>
+        <section class="secciones" id="section11" data-dark data-scroll-spy>
+          <h2 class="subtitulo">Sorteo digital</h2>
+          <ul class="lista-sorteo">
+            <li>JavaScript</li>
+            <li>PHP</li>
+            <li>Java</li>
+            <li>C</li>
+            <li>Phyton</li>
+            <li>Ruby</li>
+            <li>Go</li>
+            <li>Visual Basic</li>
+            <li>Rust</li>
+            <li>Perl</li>
+          </ul>
+          <button class="boton-sorteo">Obtener ganador</button>
+        </section>
 
-    <section class="secciones" id="section12" data-dark>
-      <h2 class="subtitulo">Responsive Slider</h2>
+        <section class="secciones" id="section12" data-dark data-scroll-spy>
+          <h2 class="subtitulo">Responsive Slider</h2>
 
-      <div class="slider">
-        <div class="slider-slides">
-          <div class="slider-slide active">
-            <img src="https://placeimg.com/400/400/animals" alt="Animals" />
+          <div class="slider">
+            <div class="slider-slides">
+              <div class="slider-slide active">
+                <img src="https://placeimg.com/400/400/animals" alt="Animals" />
+              </div>
+              <div class="slider-slide">
+                <h4>Diapositiva 2</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse dolor, voluptatibus ipsam cum nemo eos illo cupiditate nulla accusamus minima laboriosam dicta nam excepturi dolorum earum ut ad dolorem maxime.</p>
+              </div>
+              <div class="slider-slide">
+                <img src="https://placeimg.com/400/400/nature" alt="Nature" />
+              </div>
+              <div class="slider-slide">
+                <h4>Diapositiva 4</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse dolor, voluptatibus ipsam cum nemo eos illo cupiditate nulla accusamus minima laboriosam dicta nam excepturi dolorum earum ut ad dolorem maxime.</p>
+              </div>
+            </div>
+            <div class="slider-btns">
+              <a class="prev" href="#">&laquo;</a>
+              <a class="next" href="#">&raquo;</a>
+            </div>
           </div>
-          <div class="slider-slide">
-            <h4>Diapositiva 2</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse dolor, voluptatibus ipsam cum nemo eos illo cupiditate nulla accusamus minima laboriosam dicta nam excepturi dolorum earum ut ad dolorem maxime.</p>
-          </div>
-          <div class="slider-slide">
-            <img src="https://placeimg.com/400/400/nature" alt="Nature" />
-          </div>
-          <div class="slider-slide">
-            <h4>Diapositiva 4</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse dolor, voluptatibus ipsam cum nemo eos illo cupiditate nulla accusamus minima laboriosam dicta nam excepturi dolorum earum ut ad dolorem maxime.</p>
-          </div>
-        </div>
-        <div class="slider-btns">
-          <a class="prev" href="#">&laquo;</a>
-          <a class="next" href="#">&raquo;</a>
-        </div>
+        </section>
+
+        <section class="secciones" id="section13" data-dark data-scroll-spy>
+          <h2 class="subtitulo">Sección 13</h2>
+        </section>
+
+        <section class="secciones" id="section14" data-dark data-scroll-spy>
+          <h2 class="subtitulo">Sección 14</h2>
+        </section>
+
+        <section class="secciones" id="section15" data-dark data-scroll-spy>
+          <h2 class="subtitulo">Sección 15</h2>
+        </section>
       </div>
-    </section>
 
-    <section class="secciones" id="section13" data-dark>
-      <h2 class="subtitulo">Sección 13</h2>
-    </section>
-
-    <section class="secciones" id="section14" data-dark>
-      <h2 class="subtitulo">Sección 14</h2>
-    </section>
-
-    <section class="secciones" id="section15" data-dark>
-      <h2 class="subtitulo">Sección 15</h2>
-    </section>
+      <div class="ocultar-menu-desktop" id="contenedor-menu-desktop">
+        <nav class="menu-desktop" id="menu">
+          <li class="items-menu-desktop"><a href="#section1" data-scroll-spy>Reloj digital y alarma sonora</a></li>
+          <li class="items-menu-desktop"><a href="#section2" data-scroll-spy>Eventos de teclado</a></li>
+          <li class="items-menu-desktop"><a href="#section3" data-scroll-spy>Countdown</a></li>
+          <li class="items-menu-desktop"><a href="#section4" data-scroll-spy>Responsive Js</a></li>
+          <li class="items-menu-desktop"><a href="#section5" data-scroll-spy>Responsive Tester</a></li>
+          <li class="items-menu-desktop"><a href="#section6" data-scroll-spy>Detección de dispositivos (User Agent)</a></li>
+          <li class="items-menu-desktop"><a href="#section7" data-scroll-spy>Detección de la conexión</a></li>
+          <li class="items-menu-desktop"><a href="#section8" data-scroll-spy>Detección de cámara</a></li>
+          <li class="items-menu-desktop"><a href="#section9" data-scroll-spy>Geolocalización</a></li>
+          <li class="items-menu-desktop"><a href="#section10" data-scroll-spy>Filtro de busqueda</a></li>
+          <li class="items-menu-desktop"><a href="#section11" data-scroll-spy>Sorteo digital</a></li>
+          <li class="items-menu-desktop"><a href="#section12" data-scroll-spy>Responsive Slider</a></li>
+          <li class="items-menu-desktop"><a href="#section13" data-scroll-spy>Section 13</a></li>
+          <li class="items-menu-desktop"><a href="#section14" data-scroll-spy>Section 14</a></li>
+          <li class="items-menu-desktop"><a href="#section15" data-scroll-spy>Section 15</a></li>
+        </nav>
+      </div>
+    </div>
 
     <script src="js/index-dom.js" type="module"></script>
   </body>
