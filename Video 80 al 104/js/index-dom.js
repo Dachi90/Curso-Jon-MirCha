@@ -15,6 +15,7 @@ import sorteo from "./sorteo-digital.js";
 import slider from "./responsive-slider.js";
 import swapMenu from "./menu-desktop.js";
 import scrollSpy from "./scroll-espia.js";
+import videoInteligente from "./video-inteligente.js";
 
 const d = document;
 
@@ -40,6 +41,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
   slider(".slider-slide", ".next", ".prev");
   swapMenu("(min-width: 1024px)");
   scrollSpy();
+  videoInteligente();
 });
 
 d.addEventListener("keydown", (e) => {

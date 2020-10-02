@@ -19,7 +19,7 @@ export default function scrollSpy() {
   const observer = new IntersectionObserver(cb, {
     //root
     //rootMargin: "-300px",
-    threshold: 0.5,
+    threshold: 0.75,
   });
   $sections.forEach((el) => observer.observe(el));
 }
