@@ -13,7 +13,14 @@ export default function videoInteligente() {
       } else {
         entry.target.pause();
       }
-      w.addEventListener("visibilitychange", (e) => (d.visibilityState === "visible" ? entry.target.play() : entry.target.pause()));
+      w.addEventListener("visibilitychange", (e) => {
+        if (d.visibilityState === "visible" && entry.isIntersecting) {
+          entry.target.play();
+          console.log(entry.target);
+        } else {
+          entry.target.pause();
+        }
+      });
       // Esto no me funciona bien, al cambiar de pestaña si se pausa el video que estaba reproduciendo, pero al volver se ponen en reproducción los dos videos en lugar de solo el que esta en foco.
     });
   };
@@ -23,7 +30,7 @@ export default function videoInteligente() {
 }
 
 /* w.addEventListener("visibilitychange", (e) => {
-  if (d.visibilityState === "visible") {
+  if (d.visibilityState === "visible" && entry.isIntersecting) {
     entry.target.play();
     console.log(entry.target);
   } else {
