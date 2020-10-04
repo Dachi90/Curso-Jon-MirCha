@@ -27,7 +27,7 @@
         <li class="items-menu"><a href="#section11">Sorteo digital</a></li>
         <li class="items-menu"><a href="#section12">Responsive Slider</a></li>
         <li class="items-menu"><a href="#section13">Video inteligente</a></li>
-        <li class="items-menu"><a href="#section14">Section 14</a></li>
+        <li class="items-menu"><a href="#section14">Formulario de contactio (Validaciones)</a></li>
         <li class="items-menu"><a href="#section15">Section 15</a></li>
       </nav>
     </div>
@@ -228,7 +228,32 @@
         </section>
 
         <section class="secciones" id="section14" data-dark data-scroll-spy>
-          <h2 class="subtitulo">Sección 14</h2>
+          <h2 class="subtitulo">Formulario de contactio (Validaciones)</h2>
+
+          <div class="contenedor-formulario">
+            <form action="" class="formulario">
+              <div class="campo-formulario">
+                <input type="text" name="nombre" id="nombre" placeholder="Nombre" required />
+                <p class="campoNoOk"></p>
+              </div>
+
+              <div class="campo-formulario">
+                <input type="email" name="email" id="email" placeholder="Email" required />
+                <p class="campoNoOk"></p>
+              </div>
+
+              <div class="campo-formulario">
+                <input type="text" name="asunto" id="asunto" placeholder="Asunto" required />
+                <p class="campoNoOk"></p>
+              </div>
+
+              <div class="campo-formulario">
+                <textarea name="comentario" id="comentario" rows="10" placeholder="Escriba su comentario" required></textarea>
+                <p class="campoNoOk"></p>
+              </div>
+              <button type="submit" class="btn-formulario" id="btnFormulario">Enviar</button>
+            </form>
+          </div>
         </section>
 
         <section class="secciones" id="section15" data-dark data-scroll-spy>
@@ -251,7 +276,7 @@
           <li class="items-menu-desktop"><a href="#section11" data-scroll-spy>Sorteo digital</a></li>
           <li class="items-menu-desktop"><a href="#section12" data-scroll-spy>Responsive Slider</a></li>
           <li class="items-menu-desktop"><a href="#section13" data-scroll-spy>Video inteligente</a></li>
-          <li class="items-menu-desktop"><a href="#section14" data-scroll-spy>Section 14</a></li>
+          <li class="items-menu-desktop"><a href="#section14" data-scroll-spy>Formulario de contactio (Validaciones)</a></li>
           <li class="items-menu-desktop"><a href="#section15" data-scroll-spy>Section 15</a></li>
         </nav>
       </div>

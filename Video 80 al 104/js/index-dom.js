@@ -16,6 +16,7 @@ import slider from "./responsive-slider.js";
 import swapMenu from "./menu-desktop.js";
 import scrollSpy from "./scroll-espia.js";
 import videoInteligente from "./video-inteligente.js";
+import formValidate from "./validaciones-formulario.js";
 
 const d = document;
 
@@ -42,6 +43,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
   swapMenu("(min-width: 1024px)");
   scrollSpy();
   videoInteligente();
+  formValidate();
 });
 
 d.addEventListener("keydown", (e) => {
