@@ -488,3 +488,16 @@ body {
 .campoNoOkShow {
   opacity: 1;
 }
+
+.enviando {
+}
+
+.enviado {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.none {
+  display: none;
+}

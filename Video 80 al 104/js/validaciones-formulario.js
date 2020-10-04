@@ -69,14 +69,28 @@ export default function formValidate() {
     }
   };
 
-  d.addEventListener("click", (e) => {
-    if (e.target.matches(`#${$btnFormulario.id}`)) {
-      e.preventDefault();
-      validaNombre();
-      validaEmail();
-      validaAsunto();
-      validaComentario();
-    }
+  d.addEventListener("submit", (e) => {
+    e.preventDefault();
+    validaNombre();
+    validaEmail();
+    validaAsunto();
+    validaComentario();
+    alert("Enviando formulario");
+
+    // Simulando envio de formulario.
+    const $laoder = d.querySelector(".enviando"),
+      $enviado = d.querySelector(".enviado"),
+      $formulario = d.querySelector(".formulario");
+
+    $laoder.classList.remove("none");
+
+    setTimeout(() => {
+      $laoder.classList.add("none");
+      $enviado.classList.remove("none");
+      $formulario.reset();
+
+      setTimeout(() => $enviado.classList.add("none"), 3000);
+    }, 3000);
   });
 
   d.addEventListener("focusout", (e) => {
