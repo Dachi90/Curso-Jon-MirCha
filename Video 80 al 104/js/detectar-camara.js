@@ -14,7 +14,7 @@ export default function detectarCam(id) {
       })
       .catch((err) => {
         $video.insertAdjacentHTML("beforebegin", `<p><mark>${err}</mark></p>`);
-        console.log(`¡Sucedió el siguiente error ${err}`);
+        //console.log(`¡Sucedió el siguiente error ${err}`);
       });
   }
 }

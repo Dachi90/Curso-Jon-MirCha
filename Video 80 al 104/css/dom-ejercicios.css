@@ -447,9 +447,6 @@ body {
 
 /* Sección 14 Formulario de contacto (validaciones)*/
 
-.contenedor-formulario {
-}
-
 .formulario {
   width: 60%;
   margin: auto;
@@ -470,9 +467,6 @@ body {
   resize: none;
 }
 
-.btn-formulario {
-}
-
 .campoOk {
   border: 1px solid green;
 }
@@ -489,9 +483,6 @@ body {
   opacity: 1;
 }
 
-.enviando {
-}
-
 .enviado {
   font-size: 1.5rem;
   font-weight: bold;
@@ -500,4 +491,26 @@ body {
 
 .none {
   display: none;
+}
+
+/* Sección 15 Narrador de texto */
+
+.voices {
+  display: block;
+  margin: 0.5rem auto;
+  width: 50%;
+}
+
+.text {
+  display: block;
+  margin: 0.5rem auto;
+  width: 50%;
+  padding: 0.3rem;
+  resize: none;
+}
+
+.readBtn {
+  display: block;
+  margin: 0.5rem auto;
+  padding: 0.5rem;
 }

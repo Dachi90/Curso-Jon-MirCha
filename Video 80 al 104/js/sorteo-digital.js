@@ -1,12 +1,12 @@
 export default function sorteo(lista, boton) {
   const $lista = document.querySelectorAll(`${lista}>li`);
-  console.log($lista);
+  //console.log($lista);
   let lenguajes = [];
 
   $lista.forEach((el) => {
     lenguajes.push(el.textContent);
   });
-  console.log(lenguajes);
+  //console.log(lenguajes);
 
   document.addEventListener("click", (e) => {
     if (e.target.matches(boton)) {

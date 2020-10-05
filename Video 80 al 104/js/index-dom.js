@@ -17,6 +17,7 @@ import swapMenu from "./menu-desktop.js";
 import scrollSpy from "./scroll-espia.js";
 import videoInteligente from "./video-inteligente.js";
 import formValidate from "./validaciones-formulario.js";
+import speechVoice from "./Speech.js";
 
 const d = document;
 
@@ -44,6 +45,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
   scrollSpy();
   videoInteligente();
   formValidate();
+  speechVoice();
 });
 
 d.addEventListener("keydown", (e) => {
