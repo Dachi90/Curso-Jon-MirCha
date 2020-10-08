@@ -39,3 +39,38 @@
 
   xhr.send();
 })();
+/*
+
+
+
+
+*/
+// ****************************************  API Fetch ****************************************
+
+(() => {
+  const $fetch = document.getElementById("fetch"),
+    $fragment = document.createDocumentFragment();
+
+  fetch("https://jsonplaceholder.typicode.com/users")
+    .then((res) => {
+      console.log(res);
+      return res.ok ? res.json() : Promise.reject(res); // si la respuesta de la petición fecth es OK devolvemos la respueta transformada en formato json. Si no enviamos la respuesta NO OK al catch para trabajar el error.
+    })
+    .then((json) => {
+      console.log(json);
+      json.forEach((el) => {
+        const $li = document.createElement("li"); // Creamos un elemento li
+        $li.innerHTML = `${el.name} -- ${el.email} -- ${el.phone}`; // A este elemento li le vamos agregando la propiedad name, email y phone del elemento que estamos en ese momento.
+        $fragment.appendChild($li); // El elemento li al que le hemos agregado dichas propiedades lo añadimos como hijo al fragmento que hemos creado.
+      });
+      $fetch.appendChild($fragment); // Al elmento de nuestro html le añadimos nuestro fragmento ya terminado.
+    })
+    .catch((err) => {
+      console.log(err);
+      let message = err.statusText || "Ocurrió un error";
+      $fetch.innerHTML = `Error ${err.status}: ${message}`;
+    })
+    .finally(() => {
+      console.log("Esto se ejecutará independientemente del resultado de la promesa fetch.");
+    });
+})();
