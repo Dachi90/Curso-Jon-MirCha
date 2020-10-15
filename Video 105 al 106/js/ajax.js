@@ -90,7 +90,7 @@
     try {
       let res = await fetch("https://jsonplaceholder.typicode.com/users"), // Guardamos la respuesta de la petición fect en la variable res y con la palabra reservada await evitamos que se ejecute la siguiente línea de código hasta que esta termine.
         json = await res.json(); // Convertimos la respuesta de la petición fetch guardada en la variable res a formato json y la guardamos en la variable json y con la palabra reservada await evitamos que se ejecute la siguiente línea de código hasta que esta termine.
-      console.log(res, json);
+      //console.log(res, json);
 
       if (!res.ok) throw { status: res.status, statusText: res.statusText };
 
@@ -101,13 +101,46 @@
       });
       $fetchAsync.appendChild($fragment); // Al elmento de nuestro html le añadimos nuestro fragmento ya terminado.
     } catch (err) {
-      console.log(err);
+      //console.log(err);
       let message = err.statusText || "Ocurrió un error";
       $fetchAsync.innerHTML = `Error ${err.status}: ${message}`;
     } finally {
-      console.log("Esto se ejecutará independientemente del try... catch");
+      //console.log("Esto se ejecutará independientemente del try... catch");
     }
   }
 
   getData();
+})();
+/*
+
+
+
+
+*/
+// ****************************************  AJAX: Librería Axios ****************************************
+
+(() => {
+  const $axios = document.getElementById("axios"),
+    $fragment = document.createDocumentFragment();
+
+  axios
+    .get("https://jsonplaceholder.typicode.com/user")
+    .then((res) => {
+      console.log(res);
+      let json = res.data;
+      json.forEach((el) => {
+        const $li = document.createElement("li"); // Creamos un elemento li
+        $li.innerHTML = `${el.name} -- ${el.email} -- ${el.phone}`; // A este elemento li le vamos agregando la propiedad name, email y phone del elemento que estamos en ese momento.
+        $fragment.appendChild($li); // El elemento li al que le hemos agregado dichas propiedades lo añadimos como hijo al fragmento que hemos creado.
+      });
+      $axios.appendChild($fragment); // Al elmento de nuestro html le añadimos nuestro fragmento ya terminado.
+    })
+    .catch((err) => {
+      console.log(err.response);
+      let message = err.response.statusText || "Ocurrió un error";
+      $axios.innerHTML = `Error ${err.response.status}: ${message}`;
+    })
+    .finally(() => {
+      console.log("Esto se ejecutará independientemente del resultado de axios");
+    });
 })();
