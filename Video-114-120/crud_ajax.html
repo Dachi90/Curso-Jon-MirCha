@@ -102,6 +102,59 @@
       };
 
       d.addEventListener("DOMContentLoaded", getAll);
+
+      d.addEventListener("submit", (e) => {
+        if (e.target === $form) {
+          e.preventDefault();
+
+          if (!e.target.id.value) {
+            //Create - POST
+            ajax({
+              url: "http://localhost:5000/santos",
+              method: "POST",
+              succes: (res) => location.reload(),
+              error: () => $form.insertAdjacentHTML("afterend", `<p><b>${err}</b></p>`),
+              data: {
+                nombre: e.target.nombre.value,
+                constelacion: e.target.constelacion.value,
+              },
+            });
+          } else {
+            //Update - PUT
+            ajax({
+              url: `http://localhost:5000/santos/${e.target.id.value}`,
+              method: "PUT",
+              succes: (res) => location.reload(),
+              error: () => $form.insertAdjacentHTML("afterend", `<p><b>${err}</b></p>`),
+              data: {
+                nombre: e.target.nombre.value,
+                constelacion: e.target.constelacion.value,
+              },
+            });
+          }
+        }
+      });
+
+      d.addEventListener("click", (e) => {
+        if (e.target.matches(".edit")) {
+          $title.textContent = "Editar Santo";
+          $form.nombre.value = e.target.dataset.name;
+          $form.constelacion.value = e.target.dataset.constellation;
+          $form.id.value = e.target.dataset.id;
+        }
+        if (e.target.matches(".delate")) {
+          let isDelate = confirm(`¿Estás seguro de eliminar el id${e.target.dataset.id}?`);
+          if (isDelate) {
+            ajax({
+              //Delate - DELATE
+              url: `http://localhost:5000/santos/${e.target.dataset.id}`,
+              method: "DELETE",
+              succes: (res) => location.reload(),
+              error: () => alert(err),
+            });
+          }
+        }
+      });
     </script>
   </body>
 </html>
