@@ -1,0 +1,34 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Cabecera */
+.cabecera {
+  display: flex;
+  justify-content: space-between;
+
+  background-color: rgba(244, 165, 96, 0.342);
+}
+
+.logo {
+  width: 5%;
+}
+
+.menu {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+
+  list-style: none;
+}
+
+.menu li {
+  cursor: pointer;
+}
+
+/* Footer */
+.footer {
+  background-color: rgba(119, 136, 153, 0.472);
+  text-align: center;
+}
