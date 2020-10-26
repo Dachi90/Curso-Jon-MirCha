@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uploader Drag and Drop</title>
+    <style>
+      html {
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-size: 16px;
+      }
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+      body {
+        margin: 0;
+      }
+      main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        min-height: 100vh;
+      }
+
+      progress {
+        margin-top: 1rem;
+      }
+      .drop-zone {
+        margin-left: auto;
+        margin-right: auto;
+        border: thin dotted #000;
+        width: 80%;
+        height: 40vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .drop-zone.is-active {
+        border: thick dashed #000;
+        background-color: rgba(0, 128, 0, 0.5);
+        animation: pulse 1.5s infinite;
+        animation-timing-function: linear;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <article class="drop-zone">
+        <p>Arrastra y suelta tus archivos...</p>
+      </article>
+    </main>
+
+    <script>
+      const d = document,
+        $main = d.querySelector("main"),
+        $dropZone = d.querySelector(".drop-zone");
+
+      const uploader = (file) => {
+        //console.log(file);
+
+        const xhr = new XMLHttpRequest(),
+          formData = new FormData();
+
+        formData.append("file", file);
+
+        xhr.addEventListener("readystatechange", (e) => {
+          if (xhr.readyState !== 4) return;
+
+          if (xhr.status >= 200 && xhr.status < 300) {
+            let json = JSON.parse(xhr.responseText);
+            console.log(json);
+          } else {
+            let message = xhr.statusText || "Ocurrió un error";
+            console.error(`Error ${xhr.status}: ${message}`);
+          }
+        });
+
+        xhr.open("POST", "assets/uploader.php");
+        xhr.setRequestHeader("enc-type", "multipart/form-data");
+        xhr.send(formData);
+      };
+
+      const progressUpload = (file) => {
+        const $progress = d.createElement("progress"),
+          $span = d.createElement("span");
+
+        $progress.value = 0;
+        $progress.max = 100;
+
+        $main.insertAdjacentElement("beforeend", $progress);
+        $main.insertAdjacentElement("beforeend", $span);
+
+        const fileReader = new FileReader();
+        fileReader.readAsDataURL(file);
+
+        fileReader.addEventListener("progress", (e) => {
+          let progress = parseInt((e.loaded * 100) / e.total);
+          $progress.value = progress;
+          $span.innerHTML = `<b>${file.name} - ${progress}% </b>`;
+        });
+
+        fileReader.addEventListener("loadend", (e) => {
+          uploader(file);
+          setTimeout(() => {
+            $main.removeChild($progress);
+            $main.removeChild($span);
+          }, 3000);
+        });
+      };
+
+      $dropZone.addEventListener("dragover", (e) => {
+        //console.log(e);
+        e.preventDefault();
+        e.stopPropagation();
+
+        e.target.classList.add("is-active");
+      });
+
+      $dropZone.addEventListener("dragleave", (e) => {
+        //console.log(e);
+        e.preventDefault();
+        e.stopPropagation();
+        e.target.classList.remove("is-active");
+      });
+
+      $dropZone.addEventListener("drop", (e) => {
+        //console.log(e);
+        e.preventDefault();
+        e.stopPropagation();
+
+        const files = Array.from(e.dataTransfer.files);
+        files.forEach((el) => progressUpload(el));
+
+        e.target.classList.remove("is-active");
+      });
+    </script>
+  </body>
+</html>
+
+<!-- Ejecutar desde servidor Xamp -->
