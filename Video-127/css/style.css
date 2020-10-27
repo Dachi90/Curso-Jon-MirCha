@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.secciones {
+  text-align: center;
+  min-height: 100vh;
+  padding-top: 4rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  border: 1px solid black;
+}
+.subtitulo {
+  font-family: monospace;
+  font-size: 2rem;
+  padding: 1rem;
+}
+.formulario {
+  width: 60%;
+  margin: auto;
+}
+
+.campo-formulario {
+  padding: 0.5rem;
+}
+
+.campo-formulario input {
+  width: 100%;
+  padding: 0.3rem;
+}
+
+#comentario {
+  width: 100%;
+  padding: 0.3rem;
+  resize: none;
+}
+
+.campoOk {
+  border: 1px solid green;
+}
+.campoNoOk {
+  background-color: rgba(207, 46, 46, 0.7);
+  color: white;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 1s ease;
+  height: 1rem;
+}
+
+.campoNoOkShow {
+  opacity: 1;
+}
+
+.enviado {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.none {
+  display: none;
+}
