@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Envio de formulario AJAX/Fetch con PHP</title>
+  </head>
+  <body>
+    <section class="secciones">
+      <h2 class="subtitulo">Envio de formulario AJAX/Fetch con PHP</h2>
+
+      <div class="contenedor-formulario">
+        <form class="formulario">
+          <div class="campo-formulario">
+            <input type="text" name="nombre" id="nombre" placeholder="Nombre" required />
+            <p class="campoNoOk"></p>
+          </div>
+
+          <div class="campo-formulario">
+            <input type="email" name="email" id="email" placeholder="Email" required />
+            <p class="campoNoOk"></p>
+          </div>
+
+          <div class="campo-formulario">
+            <input type="text" name="asunto" id="asunto" placeholder="Asunto" required />
+            <p class="campoNoOk"></p>
+          </div>
+
+          <div class="campo-formulario">
+            <textarea name="comentario" id="comentario" rows="10" placeholder="Escriba su comentario" required></textarea>
+            <p class="campoNoOk"></p>
+          </div>
+          <button type="submit" class="btn-formulario" id="btnFormulario">Enviar</button>
+          <div class="enviando none">
+            <img src="img/puff.svg" alt="Cargando" />
+          </div>
+          <div class="enviado none">
+            <p>Los datos han sido enviados</p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
