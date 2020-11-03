@@ -1,0 +1,81 @@
+const d = document,
+  $main = d.getElementById("main"),
+  $template = d.getElementById("main-template").content,
+  $fragment = d.createDocumentFragment();
+
+d.addEventListener("click", async (e) => {
+  if (e.target.matches("#search")) {
+    e.preventDefault();
+    let queryArtist = d.getElementById("artistName").value.toLowerCase(),
+      queryLyric = d.getElementById("lyricName").value.toLowerCase();
+    //console.log(queryArtist, queryLyric);
+
+    try {
+      $main.innerHTML = `<img class="loader" src="./loader.svg" alt="Cargando..." />`;
+
+      let artistApi = `https://www.theaudiodb.com/api/v1/json/1/search.php?s=${queryArtist}`;
+      let res = await fetch(artistApi);
+      let json = await res.json();
+      console.log(artistApi, res, json);
+
+      if (!res.ok) throw { status: res.status, statusText: res.statusText };
+      if (json.artists === null) {
+        $main.innerHTML = `<h2> No existen resultados para el criterio de busqueda : <br> Artista:<mark>${queryArtist}</mark> <br> Canción:<mark>${queryLyric}</mark></h2>`;
+      } else {
+        $main.innerHTML = "";
+        $template.querySelector(".artist h3").textContent = json.artists[0].strArtist;
+
+        $template.querySelector(".artist img").src = json.artists[0].strArtistThumb ? json.artists[0].strArtistThumb : "http://static.tvmaze.com/images/no-img/no-img-portrait-text.png";
+        $template.querySelector(".artist img").alt = json.artists[0].strArtist;
+
+        $template.querySelector(".artist .year").textContent = `${json.artists[0].intFormedYear} - ${json.artists[0].intDiedYear ? json.artists[0].intDiedYear : "Presente"}`;
+
+        $template.querySelector(".artist .country").textContent = json.artists[0].strCountry ? json.artists[0].strCountry : "Sin información";
+
+        $template.querySelector(".artist .genre").textContent = json.artists[0].strGenre ? json.artists[0].strGenre : "Sin información";
+
+        $template.querySelector(".artist a").href = json.artists[0].strWebsite ? "https://" + json.artists[0].strWebsite : "#";
+        $template.querySelector(".artist a").target = json.artists[0].strWebsite ? "_blank" : "_self";
+        $template.querySelector(".artist a").textContent = "Sitio Web";
+
+        if (json.artists[0].strBiographyES) {
+          $template.querySelector(".artist .bio").textContent = json.artists[0].strBiographyES;
+        } else if (json.artists[0].strBiographyEN) {
+          $template.querySelector(".artist .bio").textContent = json.artists[0].strBiographyEN;
+        } else {
+          $template.querySelector(".artist .bio").textContent = "Sin información en castellano o inglés";
+        }
+
+        let $clone = d.importNode($template, true);
+        $fragment.appendChild($clone);
+
+        $main.appendChild($fragment);
+      }
+
+      let lyricApi = `https://api.lyrics.ovh/v1/${queryArtist}/${queryLyric}`;
+      let resLyric = await fetch(lyricApi);
+      let jsonLyric = await resLyric.json();
+      console.log(lyricApi, resLyric, jsonLyric);
+
+      if (!res.ok) throw { status: res.status, statusText: res.statusText };
+
+      if (jsonLyric.lyrics === "") {
+        console.log("sin letra");
+      } else {
+        console.log(jsonLyric.lyrics);
+
+        $template.querySelector(".lyric h3").textContent = queryLyric;
+        $template.querySelector(".lyric p").textContent = jsonLyric.lyrics;
+
+        //let $clone = d.importNode($template, false);
+        $fragment.appendChild($clone);
+
+        $main.appendChild($fragment);
+      }
+    } catch (err) {
+      console.log(err);
+      let message = err.statusText || "Ocurrió un problema en su busqueda";
+      $main.innerHTML = `<p>Error ${err.status}: ${message}</p>`;
+    }
+  }
+});
