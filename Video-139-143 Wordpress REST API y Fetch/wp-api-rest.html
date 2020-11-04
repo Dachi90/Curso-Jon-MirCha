@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WordPress REST API</title>
+  </head>
+  <body>
+    <h1>WordPress REST API</h1>
+    <article id="site" class="site"></article>
+    <section id="posts" class="posts"></section>
+    <img class="loader" src="./loader.svg" alt="Cargando..." />
+    <template id="post-template">
+      <article class="post">
+        <img class="post-image" />
+        <aside>
+          <h2 class="post-title"></h2>
+          <figure class="post-author"></figure>
+          <small class="post-date"></small>
+          <a class="post-link" target="_blank">Ver publicación original</a>
+          <p class="post-excerpt"></p>
+          <div class="post-categories"></div>
+          <div class="post-tags"></div>
+          <details class="post-content">
+            <summary>Ver contenido de la publicación</summary>
+            <article></article>
+          </details>
+        </aside>
+      </article>
+      <hr />
+    </template>
+    <script src="./wp-api-rest.js"></script>
+  </body>
+</html>
