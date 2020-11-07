@@ -1,13 +1,13 @@
 const d = document,
   $site = d.getElementById("site"),
   $posts = d.getElementById("posts"),
-  $loader = d.querySelector("loader"),
+  $loader = d.querySelector(".loader"),
   $template = d.getElementById("post-template").content,
   $fragment = d.createDocumentFragment(),
   DOMAIN = "https://malvestida.com",
   SITE = `${DOMAIN}/wp-json`,
   API_WP = `${SITE}/wp/v2`,
-  POSTS = `${API_WP}/posts`,
+  POSTS = `${API_WP}/posts?_embed`,
   PAGES = `${API_WP}/pages`,
   CATEGORIES = `${API_WP}/categories`;
 
@@ -33,10 +33,22 @@ function getSiteData() {
 }
 
 function getPosts() {
+  $loader.style.display = "block";
   fetch(POSTS)
     .then((res) => (res.ok ? res.json() : Promise.reject(res)))
     .then((json) => {
       console.log(json);
+      json.forEach((el) => {
+        $template.querySelector(".post-image").src = el._embedded["wp:featuredmedia"][0].source_url;
+        $template.querySelector(".post-image").alt = el.title.rendered;
+        $template.querySelector(".post-title").innerHTML = el.title.rendered;
+
+        let $clone = d.importNode($template, true);
+        $fragment.appendChild($clone);
+      });
+
+      $posts.appendChild($fragment);
+      $loader.style.display = "none";
     })
     .catch((err) => {
       console.log(err);
