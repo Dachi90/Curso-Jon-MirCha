@@ -4,7 +4,89 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WordPress REST API</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet" />
     <style>
+      html {
+        box-sizing: border-box;
+        font-family: "Raleway", sans-serif;
+        font-size: 16px;
+      }
+      *,
+      *:after,
+      *:before {
+        box-sizing: inherit;
+      }
+
+      a {
+        color: #01579b;
+        transition: all 0.3s ease-out;
+      }
+
+      a :hover {
+        opacity: 0.75;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      h1 {
+        text-align: center;
+      }
+
+      hr {
+        border: thin solid #01579b;
+        margin: 3rem auto;
+        width: 80%;
+      }
+
+      .site {
+        margin: 1rem auto;
+        padding: 1rem;
+        max-width: 50%;
+        text-align: center;
+      }
+
+      .post {
+        margin: 1rem auto;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        max-width: 80%;
+        text-align: center;
+        background-color: #eceff1;
+      }
+
+      .post-author img {
+        border-radius: 50%;
+      }
+
+      .post-date {
+        margin: 1rem auto;
+        display: block;
+      }
+
+      .post-excerpt,
+      .post-categories,
+      .post-tags,
+      .post-content {
+        text-align: left;
+      }
+
+      .post-content summary {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      .post.content > article {
+        padding: 1rem;
+        background-color: #e3f2fd;
+      }
+
+      .post-content img {
+        display: block;
+        margin: auto;
+      }
+
       .loader {
         display: none;
         margin: 2rem auto;
