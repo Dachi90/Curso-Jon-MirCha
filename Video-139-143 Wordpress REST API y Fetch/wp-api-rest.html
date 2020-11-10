@@ -86,9 +86,11 @@
         display: block;
         margin: auto;
       }
-
+      .loader-wrap {
+        text-align: center;
+      }
       .loader {
-        display: none;
+        visibility: hidden;
         margin: 2rem auto;
       }
     </style>
@@ -97,7 +99,10 @@
     <h1>WordPress REST API</h1>
     <article id="site" class="site"></article>
     <section id="posts" class="posts"></section>
-    <img class="loader" src="./loader.svg" alt="Cargando..." />
+    <div class="loader-wrap">
+      <img class="loader" src="./loader.svg" alt="Cargando..." />
+    </div>
+
     <template id="post-template">
       <article class="post">
         <img class="post-image" />

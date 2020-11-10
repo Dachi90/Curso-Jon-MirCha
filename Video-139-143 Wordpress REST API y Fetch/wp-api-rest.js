@@ -37,7 +37,8 @@ function getSiteData() {
 }
 
 function getPosts() {
-  $loader.style.display = "block";
+  $loader.style.visibility = "visible";
+  //$loader.style.opacity = 1;
   fetch(`${POSTS}&page=${page}&per_page=${perPage}`)
     .then((res) => (res.ok ? res.json() : Promise.reject(res)))
     .then((json) => {
@@ -86,13 +87,15 @@ function getPosts() {
       });
 
       $posts.appendChild($fragment);
-      $loader.style.display = "none";
+      $loader.style.visibility = "hidden";
+      //$loader.style.opacity = 0;
     })
     .catch((err) => {
       console.log(err);
       let message = err.statusText || "Ocurrió un problema";
       $posts.innerHTML = `<p> Error ${err.status}: ${message} </p>`;
-      $loader.style.display = "none";
+      $loader.style.visibility = "hidden";
+      //$loader.style.opacity = 0;
     });
 }
 
